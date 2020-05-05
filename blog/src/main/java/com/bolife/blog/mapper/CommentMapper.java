@@ -13,4 +13,6 @@ import java.util.List;
 @Mapper
 public interface CommentMapper {
     public List<Comment> listRecentComment(Integer limit);
+
+    List<Comment> listCommentByArticleId(Integer aid);
 }

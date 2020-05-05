@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.bolife.blog.mapper.CategoryMapper">
+    <resultMap id="BaseResultMap" type="com.bolife.blog.entity.Category">
+        <id column="category_id" property="categoryId" jdbcType="INTEGER"/>
+        <result column="category_pid" property="categoryPid" jdbcType="INTEGER"/>
+        <result column="category_name" property="categoryName" jdbcType="VARCHAR"/>
+        <result column="category_description" property="categoryDescription" jdbcType="VARCHAR"/>
+        <result column="category_order" property="categoryOrder" jdbcType="INTEGER"/>
+        <result column="category_icon" property="categoryIcon" jdbcType="VARCHAR"/>
+    </resultMap>
+    <sql id="tb">category</sql>
+
+    <sql id="Base_Column_List">
+        category_id, category_pid, category_name, category_description, category_order, category_icon
+    </sql>
+
+    <select id="countCategory" resultType="INTEGER">
+        SELECT
+        count(*) FROM
+        <include refid="tb"/>
+    </select>
+    <select id="listCategory" resultType="com.bolife.blog.entity.Category">
+        SELECT
+        <include refid="Base_Column_List"/>
+        FROM
+        <include refid="tb"/>
+        order by category_order desc,category_id asc
+    </select>
+
+    <select id="getCategoryById" resultType="com.bolife.blog.entity.Category">
+        SELECT
+        <include refid="Base_Column_List"/>
+        FROM
+        <include refid="tb"/>
+        WHERE category_id = #{cid}
+    </select>
+</mapper>

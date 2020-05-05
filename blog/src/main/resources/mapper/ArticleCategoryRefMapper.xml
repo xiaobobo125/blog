@@ -5,8 +5,8 @@
         <result property="articleId" column="article_id" jdbcType="INTEGER"></result>
         <result property="categoryId" column="category_id" jdbcType="INTEGER"></result>
     </resultMap>
-
-    <select id="listCategoryByArticleId" parameterType="java.lang.Integer"
+    <sql id="tb">article_category_ref</sql>
+    <select id="listCategoryByArticleId" parameterType="Integer"
             resultType="com.bolife.blog.entity.Category">
         SELECT
         category.category_id, category.category_pid, category.category_name
@@ -15,4 +15,11 @@
         article_category_ref.category_id = category.category_id
         ORDER BY category.category_pid asc
     </select>
+
+    <select id="listCategoryIdByArticleId" resultType="Integer">
+        SELECT category_id FROM
+        <include refid="tb"/>
+        WHERE article_id = #{value}
+    </select>
+
 </mapper>

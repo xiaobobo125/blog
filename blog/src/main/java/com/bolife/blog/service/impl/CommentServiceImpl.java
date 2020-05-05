@@ -40,4 +40,9 @@ public class CommentServiceImpl implements CommentService {
         }
         return commentList;
     }
+
+    @Override
+    public List<Comment> listCommentByArticleId(Integer aid) {
+        return commentMapper.listCommentByArticleId(aid);
+    }
 }

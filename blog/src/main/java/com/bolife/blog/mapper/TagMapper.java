@@ -20,4 +20,10 @@ public interface TagMapper {
     * @Date: 2020/5/4
     */
     public List<Tag> listTag();
+
+    /***
+     * 获取标签的个数
+     * @return
+     */
+    public Integer countTag();
 }

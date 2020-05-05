@@ -19,4 +19,13 @@ public interface TagService {
     * @Date: 2020/5/4
     */
     public List<Tag> listTag();
+    
+    /**
+    * @Description: 获取标签的个数
+    * @Param: 
+    * @return: 
+    * @Author: Mr.BoBo
+    * @Date: 2020/5/5
+    */
+    public Integer countTag();
 }

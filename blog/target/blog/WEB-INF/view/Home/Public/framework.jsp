@@ -34,6 +34,7 @@
     <rapid:block name="header-style">
 
     </rapid:block>
+
 </head>
 <body>
 <div id="page" class="site" style="transform: none;">

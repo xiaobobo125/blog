@@ -21,4 +21,11 @@ public interface LinkMapper {
     * @Date: 2020/5/4
     */
     public List<Link> listLink(@Param(value = "status")Integer status);
+
+    /***
+     * 获取友情链接的个数
+     * @param status
+     * @return
+     */
+    public Integer countLink(@Param("status") Integer status);
 }

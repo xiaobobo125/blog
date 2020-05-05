@@ -20,6 +20,13 @@
   </properties>
 
   <dependencies>
+    <!--验证码-->
+    <dependency>
+      <groupId>com.octo.captcha</groupId>
+      <artifactId>jcaptcha</artifactId>
+      <version>1.0</version>
+    </dependency>
+
     <dependency>
       <groupId>org.projectlombok</groupId>
       <artifactId>lombok</artifactId>
@@ -225,6 +232,11 @@
       <artifactId>hutool-all</artifactId>
       <version>4.1.13</version>
     </dependency>
+      <dependency>
+          <groupId>org.junit.jupiter</groupId>
+          <artifactId>junit-jupiter-api</artifactId>
+          <version>RELEASE</version>
+      </dependency>
   </dependencies>
 
   <build>

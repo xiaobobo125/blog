@@ -20,7 +20,12 @@ public interface ArticleCategoryRefMappler {
     * @Author: Mr.BoBo
     * @Date: 2020/5/4
     */
-    public List<Category> listCategoryByArticleId(Integer articleId);
+    public List<Category> listCategoryByArticleId(@Param("value") Integer value);
 
-
+    /***
+     * 根据文章ID查询分类ID
+     * @param value
+     * @return
+     */
+    List<Integer> listCategoryIdByArticleId(@Param("value") Integer value);
 }

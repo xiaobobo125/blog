@@ -29,16 +29,79 @@ public class ArticleServiceImpl implements ArticleService {
 
     @Override
     public PageInfo<Article> pageArticle(Integer pageIndex, Integer pageSize, Map<String, Object> criteria) {
-        PageHelper.startPage(pageIndex,pageSize);
-        List<Article> articleList = articleMapper.findAll();
+        PageHelper.startPage(pageIndex, pageSize);
+        List<Article> articleList = articleMapper.findAll(criteria);
         for (int i = 0; i < articleList.size(); i++) {
             List<Category> categories = articleCategoryRefMappler.listCategoryByArticleId(articleList.get(i).getArticleId());
-            if (categories == null|| categories.size()==0){
+            if (categories == null || categories.size() == 0) {
                 categories = new ArrayList<>();
                 categories.add(Category.Default());
             }
             articleList.get(i).setCategoryList(categories);
         }
         return new PageInfo<Article>(articleList);
+    }
+
+    @Override
+    public Integer countArticle(Integer status) {
+        return articleMapper.countArticle(status);
+    }
+
+    @Override
+    public Integer countArticleComment() {
+        return articleMapper.countArticleComment();
+    }
+
+    @Override
+    public Integer countArticleView() {
+        return articleMapper.countArticleView();
+    }
+
+    @Override
+    public Article getLastUpdateArticle() {
+        return articleMapper.getLastUpdateArticle();
+    }
+
+    @Override
+    public List<Article> listRandomArticle(Integer limit) {
+        return articleMapper.listRandomArticle(limit);
+    }
+
+    @Override
+    public List<Article> listArticleByCommentCount(Integer num) {
+        return articleMapper.listArticleByCommentCount(num);
+    }
+
+    @Override
+    public Article getArticleByStatusAndId(Integer status, Integer aid) {
+        return articleMapper.getArticleByStatusAndId(status,aid);
+    }
+
+    @Override
+    public List<Integer> listCategoryIdByArticleId(Integer aid) {
+        return articleCategoryRefMappler.listCategoryIdByArticleId(aid);
+    }
+
+    @Override
+    public List<Article> listArticleByCategoryIds(List<Integer> categoryIds, int i) {
+        if (categoryIds == null || categoryIds.size() == 0) {
+            return null;
+        }
+        return articleMapper.findArticleByCategoryIds(categoryIds, i);
+    }
+
+    @Override
+    public List<Article> listArticleByViewCount(int limit) {
+        return articleMapper.listArticleByViewCount(limit);
+    }
+
+    @Override
+    public Article getAfterArticle(Integer aid) {
+        return articleMapper.getAfterArticle(aid);
+    }
+
+    @Override
+    public Article getPreArticle(Integer aid) {
+        return articleMapper.getPreArticle(aid);
     }
 }

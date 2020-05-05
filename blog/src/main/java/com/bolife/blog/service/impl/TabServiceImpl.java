@@ -30,4 +30,9 @@ public class TabServiceImpl implements TagService{
         }
         return tagList;
     }
+
+    @Override
+    public Integer countTag() {
+        return tagMapper.countTag();
+    }
 }

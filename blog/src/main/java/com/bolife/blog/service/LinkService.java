@@ -19,4 +19,11 @@ public interface LinkService {
     * @Date: 2020/5/4
     */
     public List<Link> listLink(Integer Status);
+    
+    /**
+    * @Description: 获取友情链接的个数
+    * @Author: Mr.BoBo
+    * @Date: 2020/5/5
+    */
+    public Integer countLink(Integer value);
 }

@@ -18,4 +18,11 @@ public interface CommentService {
     * @Date: 2020/5/4
     */
     public List<Comment> listRecentComment(Integer limit);
+
+    /***
+     * 根据文章ID获取评论列表
+     * @param aid
+     * @return
+     */
+    List<Comment> listCommentByArticleId(Integer aid);
 }

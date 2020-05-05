@@ -106,7 +106,7 @@
         if(typeof wpOnload=='function')wpOnload();
     </script>
 
-    <p id="backtoblog"><a href="/">&larr; 返回到风吟博客</a></p>
+    <p id="backtoblog"><a href="/">&larr; 返回到博客</a></p>
 
 </div>
 
@@ -136,7 +136,7 @@
                 success: function (data) {
                     if(data.code==0) {
                         alert(data.msg);
-                    } else {
+                    } else{
                         window.location.href="/admin";
                     }
                 },

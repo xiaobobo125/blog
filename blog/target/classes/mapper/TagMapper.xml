@@ -11,6 +11,11 @@
     </sql>
     <sql id="tb">tag</sql>
 
+    <!--获得标签总数-->
+    <select id="countTag" resultType="Integer">
+        SELECT COUNT(*) FROM <include refid="tb"/>
+    </select>
+
     <select id="listTag" resultType="com.bolife.blog.entity.Tag">
         SELECT
         <include refid="Base_Column_List"/>

@@ -67,11 +67,11 @@
                             <li>赶快加我聊天吧</li>
                             <li><img src="/img/weixin.jpg"></li>
                         </ul>
-                        <ul class="weimg2">
-                            <li><strong>博客交流群</strong></li>
-                            <li>海纳百川，大家来水</li>
-                            <li><img src="/img/qqGroup.jpg" alt="weinxin"></li>
-                        </ul>
+                        <%--<ul class="weimg2">--%>
+                            <%--<li><strong>博客交流群</strong></li>--%>
+                            <%--<li>海纳百川，大家来水</li>--%>
+                            <%--<li><img src="/img/qqGroup.jpg" alt="weinxin"></li>--%>
+                        <%--</ul>--%>
                         <div class="clear"></div>
                     </div>
                     <div class="clear"></div>
@@ -356,7 +356,7 @@
 
                 <ol class="comment-list">
                     <c:set var="floor" value="0"/>
-                    <c:forEach items="${commentList}" var="c">
+                    <c:forEach items="${comments}" var="c">
                         <c:if test="${c.commentPid == 0}">
                             <c:set var="floor" value="${floor + 1}"/>
                             <li class="comments-anchor">
@@ -405,7 +405,7 @@
                                 </div>
                                 <ul class="children">
                                     <c:set var="floor2" value="0"/>
-                                    <c:forEach items="${commentList}" var="c2">
+                                    <c:forEach items="${comments}" var="c2">
                                         <c:if test="${c.commentId == c2.commentPid}">
                                             <c:set var="floor2" value="${floor2+1}"/>
                                             <li class="comments-anchor">

@@ -48,7 +48,7 @@
                 <i class="fa fa-bars"></i>所有标签
             </h3>
             <div class="tagcloud">
-                <c:forEach items="${tags}" var="t">
+                <c:forEach items="${allTagList}" var="t">
                     <a href="/tag/${t.tagId}"
                        class="tag-link-129 tag-link-position-1"
                        style="font-size: 14px;">

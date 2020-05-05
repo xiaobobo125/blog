@@ -7,6 +7,11 @@
           <element id="module-output" name="blog" />
         </element>
         <element id="directory" name="lib">
+          <element id="library" level="project" name="Maven: com.octo.captcha:jcaptcha:1.0" />
+          <element id="library" level="project" name="Maven: com.octo.captcha:jcaptcha-api:1.0" />
+          <element id="library" level="project" name="Maven: com.jhlabs:imaging:01012005" />
+          <element id="library" level="project" name="Maven: commons-collections:commons-collections:3.2" />
+          <element id="library" level="project" name="Maven: javax.servlet:servlet-api:2.3" />
           <element id="library" level="project" name="Maven: org.projectlombok:lombok:1.16.22" />
           <element id="library" level="project" name="Maven: javax.servlet.jsp:javax.servlet.jsp-api:2.3.1" />
           <element id="library" level="project" name="Maven: javax.servlet:jstl:1.1.2" />
@@ -77,6 +82,10 @@
           <element id="library" level="project" name="Maven: com.github.jsqlparser:jsqlparser:0.9.5" />
           <element id="library" level="project" name="Maven: com.alibaba:fastjson:1.2.47" />
           <element id="library" level="project" name="Maven: cn.hutool:hutool-all:4.1.13" />
+          <element id="library" level="project" name="Maven: org.junit.jupiter:junit-jupiter-api:5.7.0-M1" />
+          <element id="library" level="project" name="Maven: org.apiguardian:apiguardian-api:1.1.0" />
+          <element id="library" level="project" name="Maven: org.opentest4j:opentest4j:1.2.0" />
+          <element id="library" level="project" name="Maven: org.junit.platform:junit-platform-commons:1.7.0-M1" />
         </element>
       </element>
       <element id="directory" name="META-INF">

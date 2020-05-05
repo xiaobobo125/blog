@@ -33,4 +33,14 @@
         ORDER BY comment_id DESC
         LIMIT #{limit}
     </select>
+
+    <select id="listCommentByArticleId" parameterType="Integer" resultType="com.bolife.blog.entity.Comment">
+        SELECT
+        <include refid="Base_Column_List"/>
+        FROM
+        <include refid="tb"/>
+        WHERE
+        comment_article_id = #{id}
+        ORDER BY comment_id ASC
+    </select>
 </mapper>

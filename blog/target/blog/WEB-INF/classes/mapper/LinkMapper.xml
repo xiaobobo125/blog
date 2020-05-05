@@ -33,4 +33,13 @@
         </where>
         ORDER BY link_status ASC,link_order DESC,link_id ASC
     </select>
+
+    <select id="countLink" resultType="Integer">
+        SELECT COUNT(*) FROM <include refid="tb"/>
+        <where>
+            <if test="status!=null">
+                link_status=#{status}
+            </if>
+        </where>
+    </select>
 </mapper>

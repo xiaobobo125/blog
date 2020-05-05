@@ -36,4 +36,20 @@
     <mvc:resources mapping="/js/**" location="/resource/assets/js/"></mvc:resources>
     <mvc:resources mapping="/img/**" location="/resource/assets/img/"></mvc:resources>
     <mvc:resources mapping="/plugin/**" location="/resource/assets/plugin/"></mvc:resources>
+
+
+    <mvc:interceptors>
+        <mvc:interceptor>
+            <mvc:mapping path="/**"/>
+            <bean class="com.bolife.blog.intercepter.HomeResourceInterceptor"/>
+        </mvc:interceptor>
+        <mvc:interceptor>
+            <mvc:mapping path="/admin"/>
+            <bean class="com.bolife.blog.intercepter.SecurityInterceptor"/>
+        </mvc:interceptor>
+        <mvc:interceptor>
+            <mvc:mapping path="/admin/**"/>
+            <bean class="com.bolife.blog.intercepter.SecurityInterceptor"/>
+        </mvc:interceptor>
+    </mvc:interceptors>
 </beans>
