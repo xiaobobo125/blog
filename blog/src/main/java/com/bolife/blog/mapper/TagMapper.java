@@ -1,0 +1,23 @@
+package com.bolife.blog.mapper;
+
+import com.bolife.blog.entity.Tag;
+import org.apache.ibatis.annotations.Mapper;
+
+import java.util.List;
+
+/**
+ * @Auther: Mr.BoBo
+ * @Date: 2020/5/4 18:01
+ * @Description: 标签的持久层方法
+ */
+@Mapper
+public interface TagMapper {
+    /**
+    * @Description: 获取所有标签
+    * @Param: 
+    * @return: 
+    * @Author: Mr.BoBo
+    * @Date: 2020/5/4
+    */
+    public List<Tag> listTag();
+}

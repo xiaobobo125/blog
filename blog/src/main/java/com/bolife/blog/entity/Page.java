@@ -6,8 +6,10 @@ import java.io.Serializable;
 import java.util.Date;
 
 /**
- * @author liuyanzhao
- */
+* @author Mr.BoBo
+* @description 页面信息
+* @Date: 2020/5/4
+*/
 @Data
 public class Page implements Serializable{
 

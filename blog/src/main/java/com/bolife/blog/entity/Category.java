@@ -6,8 +6,10 @@ import lombok.Data;
 import java.io.Serializable;
 
 /**
- * @author liuyanzhao
- */
+* @author Mr.BoBo
+* @description 分类实现类
+* @Date: 2020/5/4
+*/
 @Data
 public class Category implements Serializable {
 
@@ -57,6 +59,8 @@ public class Category implements Serializable {
     public static Category Default() {
         return new Category(100000000, "未分类");
     }
+
+
 
 
 }

@@ -7,8 +7,10 @@ import java.util.Date;
 import java.util.List;
 
 /**
- * @author liuyanzhao
- */
+* @author Mr.BoBo
+* @description 文章类
+* @Date: 2020/5/4
+*/
 @Data
 public class Article implements Serializable{
 

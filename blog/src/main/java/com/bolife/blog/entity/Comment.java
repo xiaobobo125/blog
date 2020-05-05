@@ -6,9 +6,10 @@ import java.io.Serializable;
 import java.util.Date;
 
 /**
- * 文章评论
- * @author liuyanzhao
- */
+* @author Mr.BoBo
+* @description 文章评论
+* @Date: 2020/5/4
+*/
 @Data
 public class Comment implements Serializable{
 

@@ -5,10 +5,10 @@ import lombok.Data;
 import java.io.Serializable;
 
 /**
- * 文章分类关联表
- *
- * @author liuyanzhao
- */
+* @author Mr.BoBo
+* @description 文章分类关联表
+* @Date: 2020/5/4
+*/
 @Data
 public class ArticleCategoryRef implements Serializable{
 

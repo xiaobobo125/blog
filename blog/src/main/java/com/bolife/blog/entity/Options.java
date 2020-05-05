@@ -5,8 +5,10 @@ import lombok.Data;
 import java.io.Serializable;
 
 /**
- * @author liuyanzhao
- */
+* @author Mr.BoBo
+* @description 网站信息
+* @Date: 2020/5/4
+*/
 @Data
 public class Options implements Serializable{
     private static final long serialVersionUID = -776792869602511933L;

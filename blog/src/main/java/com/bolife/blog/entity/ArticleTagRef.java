@@ -5,11 +5,10 @@ import lombok.Data;
 import java.io.Serializable;
 
 /**
- * 文章和标签关联
- *
- * @author 言曌
- * @date 2018/11/17 下午5:20
- */
+* @author Mr.BoBo
+* @description 文章和标签关联
+* @Date: 2020/5/4
+*/
 @Data
 public class ArticleTagRef implements Serializable {
     private static final long serialVersionUID = -5816783232020910492L;

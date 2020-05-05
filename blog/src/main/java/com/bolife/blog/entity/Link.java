@@ -6,8 +6,10 @@ import java.io.Serializable;
 import java.util.Date;
 
 /**
- * @author liuyanzhao
- */
+* @author Mr.BoBo
+* @description 友情链接
+* @Date: 2020/5/4
+*/
 @Data
 public class Link  implements Serializable{
 
