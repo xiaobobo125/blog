@@ -102,9 +102,29 @@ public interface ArticleService {
      */
     List<Article> listArticleByViewCount(int limit);
 
+    /***
+     * 获取下一篇文章
+     * @param aid
+     * @return
+     */
     Article getAfterArticle(Integer aid);
 
+    /***
+     * 获取上一篇文章
+     * @param aid
+     * @return
+     */
     Article getPreArticle(Integer aid);
+
+    /***
+     * 获得所有的文章
+     * @return
+     */
+    List<Article> listAllNotWithContent();
+
+    void updateArticle(Article article);
+
+    void updateCommentCount(Integer articleId);
 }
 
 

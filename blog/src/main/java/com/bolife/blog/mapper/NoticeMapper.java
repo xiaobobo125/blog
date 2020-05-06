@@ -23,4 +23,6 @@ public interface NoticeMapper {
     */
     
     public List<Notice> listNotice(@Param("status") Integer status);
+
+    Notice getNoticeById(@Param("noticeId") Integer noticeId);
 }

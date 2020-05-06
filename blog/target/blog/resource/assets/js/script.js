@@ -189,19 +189,19 @@ $("#scrolldiv").textSlider({line: 1, speed: 300, timer: 6000});
             + "    <div class=\"ds-payment-img\">"
             + "     <div class=\"qrcode-img qrCode_0\" id=\"qrCode_0\">"
             + "      <div class=\"qrcode-border box-size\" style=\"border: 9.02px solid rgb(60, 175, 54\">"
-            + "       <img  class=\"qrcode-img qrCode_0\" id=\"qrCode_0\" src='/img/shang/weixinpay.jpg'  />"
+            + "       <img  class=\"qrcode-img qrCode_0\" id=\"qrCode_0\" src='/img/shang/wx.png'  />"
             + "      </div>"
             + "      <p class=\"qrcode-tip\">打赏</p>"
             + "     </div>"
             + "     <div class=\"qrcode-img qrCode_1\" id=\"qrCode_1\">"
             + "      <div class=\"qrcode-border box-size\" style=\"border: 9.02px solid rgb(102, 153, 204\">"
-            + "       <img  class=\"qrcode-img qrCode_1\" id=\"qrCode_1\"  src=\"/img/shang/qqpay.jpg\"  />"
+            + "       <img  class=\"qrcode-img qrCode_1\" id=\"qrCode_1\"  src=\"/img/shang/qq.png\"  />"
             + "      </div>"
             + "      <p class=\"qrcode-tip\">打赏</p>"
             + "     </div>"
             + "     <div class=\"qrcode-img qrCode_2\" id=\"qrCode_2\">"
             + "      <div class=\"qrcode-border box-size\" style=\"border: 9.02px solid rgb(235, 95, 1\">"
-            + "       <img  class=\"qrcode-img qrCode_2\" id=\"qrCode_2\"  src=\"/img/shang/alipay.jpg\"  />"
+            + "       <img  class=\"qrcode-img qrCode_2\" id=\"qrCode_2\"  src=\"/img/shang/zfb.jpg\"  />"
             + "      </div>"
             + "      <p class=\"qrcode-tip\">打赏</p>"
             + "     </div>"
@@ -244,16 +244,16 @@ function confirmDelete() {
 
 //退出登录
 function logout() {
-    $.ajax({
-        async: false,
-        type: "POST",
-        url: '/admin/logout',
-        contentType: "application/x-www-form-urlencoded; charset=utf-8",
-        dataType: "text",
-        complete: function () {
-            window.location.reload();
-        }
-    })
+        $.ajax({
+            async: false,
+            type: "POST",
+            url: '/admin/logout',
+            contentType: "application/x-www-form-urlencoded; charset=utf-8",
+            dataType: "text",
+            complete: function () {
+                window.location.reload();
+            }
+        })
 }
 
 //删除评论
@@ -338,7 +338,7 @@ function increaseLikeCount() {
                 );
             },
             error: function () {
-                //alert("获取数据出错!");
+                alert("获取数据出错!");
             },
         });
     }
@@ -353,20 +353,21 @@ $("#comment_form").submit(function () {
         url: '/comment',
         contentType: "application/x-www-form-urlencoded; charset=utf-8",
         data: $("#comment_form").serialize(),
+        dataType: 'text',
         success: function (data) {
-            if (data.code == 0) {
-                layer.msg("评论成功！");
+            if (data.indexOf("1")) {
+                layer.msg("<a style='color:red'>评论成功！</a>");
                 localStorage.setItem('author', $("#author_name").val());
                 localStorage.setItem('email', $("#author_email").val());
                 localStorage.setItem('url', $("#author_url").val());
                 window.setTimeout("window.location.reload()", 2000);
                 return false;
             } else {
-                layer.msg(data.msg);
+                layer.msg("<a style='color:red'>评论失败！</a>");
             }
-
         },
-        error: function () {
+        error: function (e) {
+            console.log(e);
         }
     })
     return false;

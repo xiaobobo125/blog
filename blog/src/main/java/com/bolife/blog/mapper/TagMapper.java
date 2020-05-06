@@ -2,6 +2,8 @@ package com.bolife.blog.mapper;
 
 import com.bolife.blog.entity.Tag;
 import org.apache.ibatis.annotations.Mapper;
+import org.apache.ibatis.annotations.Param;
+import org.springframework.beans.factory.annotation.Autowired;
 
 import java.util.List;
 
@@ -26,4 +28,12 @@ public interface TagMapper {
      * @return
      */
     public Integer countTag();
+
+    /***
+     * 根据ID获取tag
+     * @param tagId
+     * @return
+     */
+    Tag getTagById(@Param("tagId") Integer tagId);
+
 }

@@ -16,7 +16,7 @@ import java.util.List;
  */
 @Service
 @Slf4j
-public class TabServiceImpl implements TagService{
+public class TagServiceImpl implements TagService{
     @Autowired(required = false)
     private TagMapper tagMapper;
     @Override
@@ -35,4 +35,10 @@ public class TabServiceImpl implements TagService{
     public Integer countTag() {
         return tagMapper.countTag();
     }
+
+    @Override
+    public Tag getTagById(Integer tagId) {
+        return tagMapper.getTagById(tagId);
+    }
+
 }

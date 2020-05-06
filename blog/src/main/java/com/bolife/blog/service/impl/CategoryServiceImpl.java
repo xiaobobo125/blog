@@ -1,5 +1,6 @@
 package com.bolife.blog.service.impl;
 
+import com.bolife.blog.entity.Article;
 import com.bolife.blog.entity.Category;
 import com.bolife.blog.mapper.CategoryMapper;
 import com.bolife.blog.service.CategoryService;
@@ -33,6 +34,5 @@ public class CategoryServiceImpl implements CategoryService {
         Category categoryById = categoryMapper.getCategoryById(cid);
         return categoryById;
     }
-
 
 }

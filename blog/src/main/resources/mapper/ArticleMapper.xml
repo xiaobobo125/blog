@@ -101,6 +101,17 @@
         </where>
     </select>
 
+    <update id="updateCommentCount" parameterType="Integer">
+        UPDATE
+        <include refid="tb"/>
+        SET article_comment_count =
+        (
+        SELECT count(*) FROM `comment`
+        WHERE article.article_id=comment.comment_article_id
+        )
+        WHERE article_id=#{articleId}
+    </update>
+
     <select id="listRandomArticle" resultType="com.bolife.blog.entity.Article">
         SELECT
         <include refid="Base_Column_List"/>
@@ -182,4 +193,32 @@
         limit 1
     </select>
 
+    <select id="listAllNotWithContent" resultType="com.bolife.blog.entity.Article">
+        SELECT
+        article_id, article_user_id, article_title, article_create_time
+        FROM
+        <include refid="tb"/>
+        WHERE article_status = 1
+        ORDER BY article_id DESC
+    </select>
+
+    <update id="updateArticle" parameterType="com.bolife.blog.entity.Article">
+        update
+        <include refid="tb"/>
+        <set>
+            <if test="articleUserId != null">article_user_id = #{articleUserId,jdbcType=INTEGER},</if>
+            <if test="articleTitle != null">article_title = #{articleTitle,jdbcType=VARCHAR},</if>
+            <if test="articleViewCount != null">article_view_count = #{articleViewCount,jdbcType=INTEGER},</if>
+            <if test="articleCommentCount != null">article_comment_count = #{articleCommentCount,jdbcType=INTEGER},</if>
+            <if test="articleLikeCount != null">article_like_count = #{articleLikeCount,jdbcType=INTEGER},</if>
+            <if test="articleCreateTime != null">article_create_time = #{articleCreateTime,jdbcType=TIMESTAMP},</if>
+            <if test="articleUpdateTime != null">article_update_time = #{articleUpdateTime,jdbcType=TIMESTAMP},</if>
+            <if test="articleIsComment != null">article_is_comment = #{articleIsComment,jdbcType=INTEGER},</if>
+            <if test="articleStatus != null">article_status = #{articleStatus,jdbcType=INTEGER},</if>
+            <if test="articleOrder != null">article_order = #{articleOrder,jdbcType=INTEGER},</if>
+            <if test="articleContent != null">article_content = #{articleContent,jdbcType=LONGVARCHAR},</if>
+            <if test="articleSummary != null">article_summary = #{articleSummary,jdbcType=VARCHAR},</if>
+        </set>
+        where article_id = #{articleId,jdbcType=INTEGER}
+    </update>
 </mapper>

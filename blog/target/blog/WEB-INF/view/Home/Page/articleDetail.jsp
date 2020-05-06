@@ -67,11 +67,11 @@
                             <li>赶快加我聊天吧</li>
                             <li><img src="/img/weixin.jpg"></li>
                         </ul>
-                        <%--<ul class="weimg2">--%>
-                            <%--<li><strong>博客交流群</strong></li>--%>
-                            <%--<li>海纳百川，大家来水</li>--%>
-                            <%--<li><img src="/img/qqGroup.jpg" alt="weinxin"></li>--%>
-                        <%--</ul>--%>
+                        <ul class="weimg2">
+                            <li><strong>博客交流群</strong></li>
+                            <li>海纳百川，大家来水</li>
+                            <li><img src="/img/weixin.jpg" alt="weinxin"></li>
+                        </ul>
                         <div class="clear"></div>
                     </div>
                     <div class="clear"></div>
@@ -120,12 +120,12 @@
 
                     <footer class="single-footer">
                         <ul class="single-meta">
-                            <c:if test="${sessionScope.user!=null}">
-                                <li class="edit-link">
-                                    <a target="_blank" class="post-edit-link"
-                                       href="/admin/article/edit/${article.articleId}">编辑</a>
-                                </li>
-                            </c:if>
+                            <%--<c:if test="${sessionScope.user!=null}">--%>
+                                <%--<li class="edit-link">--%>
+                                    <%--<a target="_blank" class="post-edit-link"--%>
+                                       <%--href="/admin/article/edit/${article.articleId}">编辑</a>--%>
+                                <%--</li>--%>
+                            <%--</c:if>--%>
                             <li class="comment">
                                 <a href="/article/${article.articleId}#comments"
                                    rel="external nofollow">
@@ -302,16 +302,18 @@
                     <form id="comment_form" method="post">
                         <c:if test="${sessionScope.user!=null}">
                             <div class="user_avatar">
-                                <img alt="言曌"
+                                <img alt="头像"
                                      src="${sessionScope.user.userAvatar}"
                                      class="avatar avatar-64 photo" height="64" width="64">
                                 登录者：${sessionScope.user.userNickname}
-                                <br> <a href="javascript:void(0)" onclick="logout()">登出</a>
+                                <br> <a href="" onclick="logout()">登出</a>
                                 <input type="hidden" name="commentRole" value="1">
                                 <input type="hidden" name="commentAuthorName"
                                        value="${sessionScope.user.getUserNickname()}">
                                 <input type="hidden" name="commentAuthorEmail"
                                        value="${sessionScope.user.getUserEmail()}">
+                                <input type="hidden" name="commentUserId"
+                                       value="${sessionScope.user.getUserId()}">
                                 <input type="hidden" name="commentAuthorUrl" value="${sessionScope.user.getUserUrl()}">
                             </div>
                         </c:if>
@@ -384,7 +386,8 @@
                                                     </span>
                                                     <fmt:formatDate value="${c.commentCreateTime}"
                                                                     pattern="yyyy年MM月dd日 HH:mm:ss"/>&nbsp;
-                                                    <c:if test="${sessionScope.user != null}">
+                                                    
+                                                    <c:if test="${sessionScope.user != null && c2.commentUserId eq sessionScope.user.userId}">
                                                         <a href="javascript:void(0)"
                                                            onclick="deleteComment(${c.commentId})">删除</a>
                                                         <a class="comment-edit-link"
@@ -433,7 +436,7 @@
                                                         </span>
                                                         <fmt:formatDate value="${c2.commentCreateTime}"
                                                                         pattern="yyyy年MM月dd日 HH:mm:ss"/>&nbsp;
-                                                        <c:if test="${sessionScope.user != null}">
+                                                        <c:if test="${sessionScope.user != null && c2.commentUserId eq sessionScope.user.userId}">
                                                             <a href="javascript:void(0)"
                                                                onclick="deleteComment(${c2.commentId})">删除</a>
                                                             <a class="comment-edit-link"

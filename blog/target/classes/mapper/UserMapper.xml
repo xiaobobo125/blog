@@ -40,8 +40,10 @@
         FROM
         <include refid="tb"/>
         <where>
-            user_id=#{userId}
+            user_name=#{value} OR user_email=#{value}
         </where>
+        AND user_status>0
+        limit 1
     </select>
 
     <select id="getUserById" parameterType="Integer" resultType="com.bolife.blog.entity.User">

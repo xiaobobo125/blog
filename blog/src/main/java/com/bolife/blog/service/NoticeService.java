@@ -19,4 +19,6 @@ public interface NoticeService {
     * @Date: 2020/5/4
     */
     public List<Notice> listNotice(@Param(value = "status") Integer status);
+
+    Notice getNoticeById(Integer noticeId);
 }

@@ -27,4 +27,10 @@
         </where>
         ORDER BY notice_status ASC, notice_order DESC, notice_id ASC
     </select>
+    <select id="getNoticeById" parameterType="Integer" resultType="com.bolife.blog.entity.Notice">
+        SELECT
+        <include refid="Base_Column_List"/>
+        FROM  <include refid="tb"/>
+        where notice_id = #{noticeId,jdbcType=INTEGER}
+    </select>
 </mapper>

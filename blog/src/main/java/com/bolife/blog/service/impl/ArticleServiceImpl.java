@@ -20,7 +20,7 @@ import java.util.Map;
  * @Description:
  */
 
-@Service("articleService")
+@Service
 public class ArticleServiceImpl implements ArticleService {
     @Autowired(required = false)
     private ArticleMapper articleMapper;
@@ -103,5 +103,20 @@ public class ArticleServiceImpl implements ArticleService {
     @Override
     public Article getPreArticle(Integer aid) {
         return articleMapper.getPreArticle(aid);
+    }
+
+    @Override
+    public List<Article> listAllNotWithContent() {
+        return articleMapper.listAllNotWithContent();
+    }
+
+    @Override
+    public void updateArticle(Article article) {
+        articleMapper.updateArticle(article);
+    }
+
+    @Override
+    public void updateCommentCount(Integer articleId) {
+        articleMapper.updateCommentCount(articleId);
     }
 }

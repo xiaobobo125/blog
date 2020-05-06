@@ -21,4 +21,15 @@
         <include refid="Base_Column_List"/>
         FROM <include refid="tb"/>
     </select>
+
+    <select id="getTagById" resultType="com.bolife.blog.entity.Tag">
+        SELECT
+        <include refid="Base_Column_List"/>
+        FROM <include refid="tb"/>
+        <where>
+            <if test="tagId != null">
+                tag_id=#{tagId}
+            </if>
+        </where>
+    </select>
 </mapper>

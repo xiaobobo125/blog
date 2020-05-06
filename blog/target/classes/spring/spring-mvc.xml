@@ -49,6 +49,7 @@
         </mvc:interceptor>
         <mvc:interceptor>
             <mvc:mapping path="/admin/**"/>
+            <mvc:exclude-mapping path="/admin/logout"/>
             <bean class="com.bolife.blog.intercepter.SecurityInterceptor"/>
         </mvc:interceptor>
     </mvc:interceptors>

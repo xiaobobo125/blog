@@ -28,4 +28,7 @@ public interface TagService {
     * @Date: 2020/5/5
     */
     public Integer countTag();
+
+    Tag getTagById(Integer tagId);
+
 }

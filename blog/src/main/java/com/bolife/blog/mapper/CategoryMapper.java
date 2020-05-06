@@ -1,5 +1,6 @@
 package com.bolife.blog.mapper;
 
+import com.bolife.blog.entity.Article;
 import com.bolife.blog.entity.Category;
 import org.apache.ibatis.annotations.Mapper;
 import org.apache.ibatis.annotations.Param;
@@ -31,4 +32,5 @@ public interface CategoryMapper {
      * @param cid
      */
     Category getCategoryById(@Param("cid") Integer cid);
+
 }

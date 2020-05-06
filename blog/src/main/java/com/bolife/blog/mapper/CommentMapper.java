@@ -15,4 +15,6 @@ public interface CommentMapper {
     public List<Comment> listRecentComment(Integer limit);
 
     List<Comment> listCommentByArticleId(Integer aid);
+
+    void insert(Comment comment);
 }

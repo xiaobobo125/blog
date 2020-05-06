@@ -25,4 +25,6 @@ public interface CommentService {
      * @return
      */
     List<Comment> listCommentByArticleId(Integer aid);
+
+    void insertComment(Comment comment);
 }

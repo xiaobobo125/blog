@@ -45,4 +45,14 @@ public class CommentServiceImpl implements CommentService {
     public List<Comment> listCommentByArticleId(Integer aid) {
         return commentMapper.listCommentByArticleId(aid);
     }
+
+    @Override
+    public void insertComment(Comment comment) {
+        try {
+            commentMapper.insert(comment);
+        } catch (Exception e) {
+            e.printStackTrace();
+            log.error("创建评论失败：comment:{}, cause:{}", comment, e);
+        }
+    }
 }

@@ -23,7 +23,9 @@ public class SecurityInterceptor extends HandlerInterceptorAdapter {
         if(user == null) {
             response.sendRedirect("/login");
             return false;
-        }else if(user!=null && user.getUserStatus() != 1){
+        }
+        //设置登陆之后的权限
+        if(user != null && user.getUserStatus() != 1){
             response.sendRedirect("/");
             return false;
         }

@@ -4,7 +4,6 @@ import com.bolife.blog.entity.Article;
 import org.apache.ibatis.annotations.Mapper;
 import org.apache.ibatis.annotations.Param;
 
-import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
@@ -15,7 +14,13 @@ import java.util.Map;
  */
 @Mapper
 public interface ArticleMapper {
-    
+    /***
+     * 获取文章信息
+     * @param pageIndex 起始地址
+     * @param pageSize 文章个数
+     * @param status    文章状态
+     * @return
+     */
     public List<Article> pageArticle(@Param("pageIndex") Integer pageIndex,
                                      @Param("pageSize") Integer pageSize,
                                      @Param("status") Integer status);
@@ -106,4 +111,19 @@ public interface ArticleMapper {
      * @return 文章
      */
     Article getPreArticle(@Param(value = "id") Integer id);
+
+    /***
+     * 获得所有的文章
+     * @return
+     */
+    List<Article> listAllNotWithContent();
+
+    /***
+     * 更新文章信息
+     * @param article
+     * @return
+     */
+    Integer updateArticle(Article article);
+
+    void updateCommentCount(@Param(value = "articleId")Integer articleId);
 }

@@ -12,7 +12,7 @@
         <div class="top-nav">
             <div class="user-login">
                 <c:choose>
-                    <c:when test="${sessionScope.user==null}">
+                    <c:when test="${sessionScope.user == null}">
                         <a href="/login">登录</a>
                         <a href="/regist">注册</a>
                     </c:when>

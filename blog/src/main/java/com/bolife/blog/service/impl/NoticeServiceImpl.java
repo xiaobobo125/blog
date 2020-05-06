@@ -23,4 +23,9 @@ public class NoticeServiceImpl implements NoticeService {
     public List<Notice> listNotice(Integer status) {
         return noticeMapper.listNotice(status);
     }
+
+    @Override
+    public Notice getNoticeById(Integer noticeId) {
+        return noticeMapper.getNoticeById(noticeId);
+    }
 }

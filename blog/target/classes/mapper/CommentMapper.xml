@@ -43,4 +43,18 @@
         comment_article_id = #{id}
         ORDER BY comment_id ASC
     </select>
+
+    <insert id="insert" parameterType="com.bolife.blog.entity.Comment" useGeneratedKeys="true" keyProperty="commentId">
+        insert into
+        <include refid="tb"/>
+        (comment_pid, comment_pname, comment_article_id,
+        comment_author_name, comment_author_email,
+        comment_author_url, comment_author_avatar, comment_content, comment_agent,
+        comment_ip, comment_create_time, comment_role)
+        values (#{commentPid,jdbcType=INTEGER}, #{commentPname,jdbcType=VARCHAR}, #{commentArticleId,jdbcType=INTEGER},
+        #{commentAuthorName,jdbcType=VARCHAR}, #{commentAuthorEmail,jdbcType=VARCHAR},
+        #{commentAuthorUrl,jdbcType=VARCHAR},#{commentAuthorAvatar}, #{commentContent,jdbcType=VARCHAR},
+        #{commentAgent,jdbcType=VARCHAR},
+        #{commentIp,jdbcType=VARCHAR}, #{commentCreateTime,jdbcType=TIMESTAMP}, #{commentRole,jdbcType=INTEGER})
+    </insert>
 </mapper>

@@ -1,19 +1,16 @@
 package com.bolife.blog.conntroller.home;
 
-import com.bolife.blog.entity.Article;
-import com.bolife.blog.entity.Comment;
-import com.bolife.blog.entity.Tag;
-import com.bolife.blog.entity.User;
+import com.alibaba.fastjson.JSON;
+import com.bolife.blog.entity.*;
 import com.bolife.blog.enums.EnArticleStatus;
-import com.bolife.blog.service.ArticleService;
-import com.bolife.blog.service.CommentService;
-import com.bolife.blog.service.TagService;
-import com.bolife.blog.service.UserService;
+import com.bolife.blog.service.*;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.bind.annotation.ResponseBody;
 
 import java.util.List;
 
@@ -36,6 +33,14 @@ public class ArticleController {
     @Autowired(required = false)
     private TagService tagService;
 
+    @Autowired(required = false)
+    private CategoryService categoryService;
+
+    @Autowired(required = false)
+    private ArticleTagRefService articleTagRefService;
+
+    @Autowired(required = false)
+    private ArticleCategoryRefService articleCategoryRefService;
     @RequestMapping("/article/{aid}")
     public String getArticleInfo(@PathVariable("aid")Integer aid, Model model){
         //文章信息，分类，标签，作者，评论
@@ -43,6 +48,12 @@ public class ArticleController {
         if (articleByStatusAndId == null){
             return "redirect:/404";
         }
+        //获取文章分类
+        List<Category> categories = articleCategoryRefService.listCategoryByArticleId(aid);
+        articleByStatusAndId.setCategoryList(categories);
+        //获取文章标签
+        List<Tag> tags = articleTagRefService.listTagByArticleId(aid);
+        articleByStatusAndId.setTagList(tags);
         //获取用户信息
         User user = userService.getUserById(articleByStatusAndId.getArticleUserId());
         articleByStatusAndId.setUser(user);
@@ -80,5 +91,44 @@ public class ArticleController {
         model.addAttribute("mostCommentArticleList", mostCommentArticleList);
 
         return "Home/Page/articleDetail";
+    }
+
+    @RequestMapping(value = "/map")
+    public String siteMap(Model model) {
+        //文章显示
+        List<Article> articleList = articleService.listAllNotWithContent();
+        model.addAttribute("articleList", articleList);
+        //分类显示
+        List<Category> categoryList = categoryService.listCategory();
+        model.addAttribute("categoryList", categoryList);
+        //标签显示
+        List<Tag> tagList = tagService.listTag();
+        model.addAttribute("tagList", tagList);
+
+        //侧边栏显示
+        //获得热评文章
+        List<Article> mostCommentArticleList = articleService.listArticleByCommentCount(10);
+        model.addAttribute("mostCommentArticleList", mostCommentArticleList);
+        return "Home/Page/siteMap";
+    }
+
+    @RequestMapping(value = "/article/like/{articleId}",method = {RequestMethod.POST})
+    @ResponseBody
+    public String increaseLikeCount(@PathVariable("articleId") Integer articleId){
+        Article article = articleService.getArticleByStatusAndId(EnArticleStatus.PUBLISH.getValue(), articleId);
+        Integer articleLikeCount = article.getArticleLikeCount()+1;
+        article.setArticleLikeCount(articleLikeCount);
+        articleService.updateArticle(article);
+        return JSON.toJSONString(articleLikeCount);
+    }
+
+    @RequestMapping(value = "/article/view/{id}", method = {RequestMethod.POST})
+    @ResponseBody
+    public String increaseViewCount(@PathVariable("id") Integer id) {
+        Article article = articleService.getArticleByStatusAndId(EnArticleStatus.PUBLISH.getValue(), id);
+        Integer articleCount = article.getArticleViewCount() + 1;
+        article.setArticleViewCount(articleCount);
+        articleService.updateArticle(article);
+        return JSON.toJSONString(articleCount);
     }
 }

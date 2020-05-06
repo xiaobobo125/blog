@@ -22,6 +22,8 @@ public class Comment implements Serializable{
 
     private Integer commentArticleId;
 
+    private Integer commentUserId;
+
     private String commentAuthorName;
 
     private String commentAuthorEmail;

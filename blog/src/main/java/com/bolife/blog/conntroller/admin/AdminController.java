@@ -7,6 +7,7 @@ import com.bolife.blog.utils.MyUtils;
 import org.json.JSONObject;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.ResponseBody;
@@ -45,8 +46,8 @@ public class AdminController {
         return "Admin/regist";
     }
 
-    @RequestMapping("/login")
-    public String loginPage() {
+    @RequestMapping(value = "/login")
+    public String loginPage(HttpServletRequest request) {
         return "Admin/login";
     }
 
@@ -78,7 +79,8 @@ public class AdminController {
             user.setUserName(email);
             user.setUserLastLoginTime(new Date());
             user.setUserLastLoginIp(getIpAddr(request));
-            user.setUserStatus(0);
+            user.setUserStatus(2);
+            user.setUserAvatar("/img/default.jpg");
             userService.insert(user);
         }
         String result = new JSONObject(map).toString();
@@ -89,7 +91,6 @@ public class AdminController {
     @ResponseBody
     public String loginVerify(HttpServletRequest request, HttpServletResponse response)  {
         Map<String, Object> map = new HashMap<String, Object>();
-
         String username = request.getParameter("username");
         String password = request.getParameter("password");
         String rememberme = request.getParameter("rememberme");
@@ -126,12 +127,11 @@ public class AdminController {
     }
     /**
      * 退出登录
-     *
      * @param session
      * @return
      */
     @RequestMapping(value = "/admin/logout")
-    public String logout(HttpSession session)  {
+    public String logout(HttpSession session) {
         session.removeAttribute("user");
         session.invalidate();
         return "redirect:/login";

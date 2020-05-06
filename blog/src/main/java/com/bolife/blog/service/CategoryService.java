@@ -1,5 +1,6 @@
 package com.bolife.blog.service;
 
+import com.bolife.blog.entity.Article;
 import com.bolife.blog.entity.Category;
 
 import java.util.List;
@@ -31,4 +32,5 @@ public interface CategoryService {
      * @return
      */
     public Category getCategoryById(Integer cid);
+
 }
