@@ -6,6 +6,8 @@ import com.bolife.blog.enums.EnArticleStatus;
 import com.bolife.blog.mapper.ArticleMapper;
 import com.bolife.blog.mapper.CommentMapper;
 import com.bolife.blog.service.CommentService;
+import com.github.pagehelper.PageHelper;
+import com.github.pagehelper.PageInfo;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -85,4 +87,21 @@ public class CommentServiceImpl implements CommentService {
                 log.error("更新评论，comment:{}, cause:{}", comment, e);
             }
         }
+
+    @Override
+    public PageInfo<Comment> listCommentByPage(Integer pageIndex, Integer pageSize) {
+        PageHelper.startPage(pageIndex, pageSize);
+        List<Comment> commentList = null;
+        try {
+            commentList = commentMapper.listComment();
+            for (int i = 0; i < commentList.size(); i++) {
+                Article article = articleMapper.getArticleByStatusAndId(EnArticleStatus.PUBLISH.getValue(), commentList.get(i).getCommentArticleId());
+                commentList.get(i).setArticle(article);
+            }
+        } catch (Exception e) {
+            e.printStackTrace();
+            log.error("分页获得评论失败,pageIndex:{}, pageSize:{}, cause:{}", pageIndex, pageSize, e);
+        }
+        return new PageInfo<>(commentList);
+    }
 }

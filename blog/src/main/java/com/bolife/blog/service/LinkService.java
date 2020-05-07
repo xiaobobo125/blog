@@ -26,4 +26,12 @@ public interface LinkService {
     * @Date: 2020/5/5
     */
     public Integer countLink(Integer value);
+
+    void insertLink(Link link);
+
+    Link getLinkById(Integer id);
+
+    void deleteLink(Integer id);
+
+    void updateLink(Link link);
 }

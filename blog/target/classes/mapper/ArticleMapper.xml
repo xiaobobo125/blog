@@ -232,4 +232,11 @@
         ORDER BY article_id DESC
         LIMIT #{value}
     </select>
+
+    <select id="countArticleByUser" parameterType="Integer" resultType="Integer">
+        SELECT COUNT(*)
+        FROM
+        <include refid="tb"/>
+        WHERE article_user_id=#{id} AND article_status = 1
+    </select>
 </mapper>

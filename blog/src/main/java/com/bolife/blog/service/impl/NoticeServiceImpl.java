@@ -1,5 +1,6 @@
 package com.bolife.blog.service.impl;
 
+import com.bolife.blog.entity.Link;
 import com.bolife.blog.entity.Notice;
 import com.bolife.blog.mapper.NoticeMapper;
 import com.bolife.blog.service.NoticeService;
@@ -27,5 +28,20 @@ public class NoticeServiceImpl implements NoticeService {
     @Override
     public Notice getNoticeById(Integer noticeId) {
         return noticeMapper.getNoticeById(noticeId);
+    }
+
+    @Override
+    public void insertNotice(Notice notice)  {
+        noticeMapper.insert(notice);
+    }
+
+    @Override
+    public void deleteNotice(Integer id)  {
+        noticeMapper.deleteById(id);
+    }
+
+    @Override
+    public void updateNotice(Notice notice)  {
+        noticeMapper.update(notice);
     }
 }

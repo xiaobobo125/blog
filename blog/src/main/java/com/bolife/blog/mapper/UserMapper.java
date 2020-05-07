@@ -3,6 +3,8 @@ package com.bolife.blog.mapper;
 import com.bolife.blog.entity.User;
 import org.apache.ibatis.annotations.Mapper;
 
+import java.util.List;
+
 /**
  * @Auther: Mr.BoBo
  * @Date: 2020/5/5 14:46
@@ -37,4 +39,12 @@ public interface UserMapper {
      * @return
      */
     User getUserById(Integer userId);
+
+    User getUserByEmail(String email);
+
+    User getUserByName(String name);
+
+    List<User> listUser();
+
+    void deleteById(Integer id);
 }

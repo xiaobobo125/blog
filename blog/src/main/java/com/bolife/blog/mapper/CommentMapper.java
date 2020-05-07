@@ -26,4 +26,6 @@ public interface CommentMapper {
     List<Comment> listChildComment(@Param("cid") Integer cid);
 
     void update(Comment comment);
+
+    List<Comment> listComment();
 }

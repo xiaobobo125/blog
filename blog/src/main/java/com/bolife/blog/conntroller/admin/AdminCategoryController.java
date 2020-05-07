@@ -34,6 +34,7 @@ public class AdminCategoryController {
         ModelAndView modelandview = new ModelAndView();
         List<Category> categoryList = categoryService.listCategoryWithCount();
         modelandview.addObject("categoryList",categoryList);
+        modelandview.addObject("listStatus",1);
         modelandview.setViewName("Admin/Category/index");
         return modelandview;
     }
@@ -50,6 +51,7 @@ public class AdminCategoryController {
         model.addAttribute("category",categoryById);
         List<Category> categories = categoryService.listCategoryWithCount();
         model.addAttribute("categoryList",categories);
+        model.addAttribute("listStatus",1);
         return "Admin/Category/edit";
     }
 

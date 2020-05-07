@@ -34,6 +34,7 @@ public class AdminTagController {
         ModelAndView modelandview = new ModelAndView();
         List<Tag> tagList = tagService.listTagWithCount();
         modelandview.addObject("tagList",tagList);
+        modelandview.addObject("listStatus",1);
         modelandview.setViewName("Admin/Tag/index");
         return modelandview;
     }
@@ -50,6 +51,7 @@ public class AdminTagController {
         model.addAttribute("tag",tagById);
         List<Tag> tagList = tagService.listTagWithCount();
         model.addAttribute("tagList",tagList);
+        model.addAttribute("listStatus",1);
         return "Admin/Tag/edit";
     }
 

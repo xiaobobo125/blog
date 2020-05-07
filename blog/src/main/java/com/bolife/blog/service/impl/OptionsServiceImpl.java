@@ -4,6 +4,7 @@ import com.bolife.blog.entity.Options;
 import com.bolife.blog.mapper.OptionsMapper;
 import com.bolife.blog.service.OptionsService;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.cache.annotation.CacheEvict;
 import org.springframework.stereotype.Service;
 
 /**
@@ -18,5 +19,16 @@ public class OptionsServiceImpl implements OptionsService {
     @Override
     public Options getOptions() {
         return optionsMapper.getOptions();
+    }
+    @Override
+    @CacheEvict(value = "default", key = "'options'")
+    public void insertOptions(Options options) {
+        optionsMapper.insert(options);
+    }
+
+    @Override
+    @CacheEvict(value = "default", key = "'options'")
+    public void updateOptions(Options options) {
+        optionsMapper.update(options);
     }
 }

@@ -70,4 +70,43 @@
         </set>
         where user_id = #{userId,jdbcType=INTEGER}
     </update>
+
+    <delete id="deleteById" parameterType="java.lang.Integer">
+        delete from
+        <include refid="tb"/>
+        where user_id = #{userId,jdbcType=INTEGER}
+    </delete>
+
+    <select id="getUserByName" parameterType="String" resultType="com.bolife.blog.entity.User">
+        SELECT
+        <include refid="Base_Column_List"/>
+        FROM
+        <include refid="tb"/>
+        <where>
+            user_name=#{value}
+        </where>
+        limit 1
+    </select>
+
+    <!--根据Email查用户-->
+    <select id="getUserByEmail" parameterType="String" resultType="com.bolife.blog.entity.User">
+        SELECT
+        <include refid="Base_Column_List"/>
+        FROM
+        <include refid="tb"/>
+        <where>
+            user_email=#{value}
+        </where>
+        limit 1
+    </select>
+
+    <!--用户列表查询-->
+    <select id="listUser" parameterType="com.bolife.blog.entity.User"
+            resultType="com.bolife.blog.entity.User">
+        SELECT
+        <include refid="Base_Column_List"/>
+        FROM
+        <include refid="tb"/>
+        ORDER BY `user_status` ASC
+    </select>
 </mapper>

@@ -39,6 +39,7 @@ public class AdminArticleController {
         List<Tag> tags = tagService.listTag();
         model.addAttribute("categoryList",categories);
         model.addAttribute("tagList",tags);
+        model.addAttribute("listStatus",1);
         return "/Admin/Article/insert";
     }
 
@@ -55,6 +56,7 @@ public class AdminArticleController {
         }
         PageInfo<Article> articlePageInfo = articleService.pageArticle(pageIndex, pageSize, criteria);
         model.addAttribute("pageInfo", articlePageInfo);
+        model.addAttribute("listStatus",1);
         return "Admin/Article/index";
     }
 }

@@ -130,4 +130,6 @@ public interface ArticleMapper {
     int countArticleByCategoryId(Integer id);
 
     List<Article> listArticleByLimit(int limit);
+
+    Integer countArticleByUser(Integer userId);
 }

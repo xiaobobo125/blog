@@ -83,6 +83,15 @@
         comment_pid=#{cid}
     </select>
 
+    <!--获取评论列表-->
+    <select id="listComment" resultType="com.bolife.blog.entity.Comment">
+        SELECT
+        <include refid="Base_Column_List"/>
+        FROM
+        <include refid="tb"/>
+        ORDER BY comment_id DESC
+    </select>
+
     <update id="update" parameterType="com.bolife.blog.entity.Comment">
         update
         <include refid="tb"/>

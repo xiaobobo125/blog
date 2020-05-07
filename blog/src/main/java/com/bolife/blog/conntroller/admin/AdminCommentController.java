@@ -4,12 +4,14 @@ import com.bolife.blog.entity.Article;
 import com.bolife.blog.entity.Comment;
 import com.bolife.blog.service.ArticleService;
 import com.bolife.blog.service.CommentService;
+import com.github.pagehelper.PageInfo;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.bind.annotation.RequestParam;
 
 import java.util.List;
 
@@ -27,6 +29,15 @@ public class AdminCommentController {
     @Autowired
     private ArticleService articleService;
 
+    @RequestMapping("")
+    public String commentListView(@RequestParam(required = false, defaultValue = "1") Integer pageIndex,
+                                  @RequestParam(required = false, defaultValue = "10") Integer pageSize,
+                                  Model model) {
+        PageInfo<Comment> commentPageInfo = commentService.listCommentByPage(pageIndex, pageSize);
+        model.addAttribute("pageInfo", commentPageInfo);
+        model.addAttribute("pageUrlPrefix","/admin/comment?pageIndex");
+        return "Admin/Comment/index";
+    }
     @RequestMapping(value = "/delete/{cid}")
     public void deleteComment(@PathVariable("cid") Integer cid){
         Comment comment =  commentService.getCommentById(cid);

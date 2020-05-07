@@ -1,5 +1,6 @@
 package com.bolife.blog.service;
 
+import com.bolife.blog.entity.Link;
 import com.bolife.blog.entity.Notice;
 import org.apache.ibatis.annotations.Param;
 
@@ -21,4 +22,12 @@ public interface NoticeService {
     public List<Notice> listNotice(@Param(value = "status") Integer status);
 
     Notice getNoticeById(Integer noticeId);
+
+    void insertNotice(Notice notice);
+
+    void deleteNotice(Integer id);
+
+    void updateNotice(Notice notice);
+
+
 }

@@ -3,6 +3,7 @@ package com.bolife.blog.mapper;
 import com.bolife.blog.entity.Link;
 import org.apache.ibatis.annotations.Mapper;
 import org.apache.ibatis.annotations.Param;
+import org.springframework.web.bind.annotation.PathVariable;
 
 import java.util.List;
 
@@ -28,4 +29,12 @@ public interface LinkMapper {
      * @return
      */
     public Integer countLink(@Param("status") Integer status);
+
+    void insertLink(Link link);
+
+    Link getLinkById(@Param("id") Integer id);
+
+    void deleteLink(@Param("id") Integer id);
+
+    void updateLink(Link link);
 }

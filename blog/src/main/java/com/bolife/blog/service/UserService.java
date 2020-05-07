@@ -2,6 +2,8 @@ package com.bolife.blog.service;
 
 import com.bolife.blog.entity.User;
 
+import java.util.List;
+
 /**
  * @Auther: Mr.BoBo
  * @Date: 2020/5/5 14:43
@@ -35,4 +37,12 @@ public interface UserService {
      * @return
      */
     User getUserById(Integer articleUserId);
+
+    void deleteUser(Integer id);
+
+    List<User> listUser();
+
+    User getUserByName(String name);
+
+    User getUserByEmail(String email);
 }

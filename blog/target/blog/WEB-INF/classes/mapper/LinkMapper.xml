@@ -42,4 +42,44 @@
             </if>
         </where>
     </select>
+
+    <insert id="insertLink" parameterType="com.bolife.blog.entity.Link" useGeneratedKeys="true" keyProperty="linkId">
+        insert into link (link_id, link_url, link_name,
+        link_image, link_description, link_owner_nickname,
+        link_owner_contact, link_update_time, link_create_time,
+        link_order, link_status)
+        values (#{linkId,jdbcType=INTEGER}, #{linkUrl,jdbcType=VARCHAR}, #{linkName,jdbcType=VARCHAR},
+        #{linkImage,jdbcType=VARCHAR}, #{linkDescription,jdbcType=VARCHAR}, #{linkOwnerNickname,jdbcType=VARCHAR},
+        #{linkOwnerContact,jdbcType=VARCHAR}, #{linkUpdateTime,jdbcType=TIMESTAMP}, #{linkCreateTime,jdbcType=TIMESTAMP},
+        #{linkOrder,jdbcType=INTEGER}, #{linkStatus,jdbcType=INTEGER})
+    </insert>
+
+    <select id="getLinkById" resultMap="BaseResultMap" parameterType="java.lang.Integer" >
+        select
+        <include refid="Base_Column_List" />
+        from link
+        where link_id = #{id,jdbcType=INTEGER}
+    </select>
+
+    <delete id="deleteLink" parameterType="java.lang.Integer" >
+        delete from link
+        where link_id = #{id,jdbcType=INTEGER}
+    </delete>
+
+    <update id="updateLink" parameterType="com.bolife.blog.entity.Link" >
+        update link
+        <set >
+            <if test="linkUrl != null" > link_url = #{linkUrl,jdbcType=VARCHAR},</if>
+            <if test="linkName != null" >link_name = #{linkName,jdbcType=VARCHAR},</if>
+            <if test="linkImage != null" >link_image = #{linkImage,jdbcType=VARCHAR},</if>
+            <if test="linkDescription != null" >link_description = #{linkDescription,jdbcType=VARCHAR},</if>
+            <if test="linkOwnerNickname != null" >link_owner_nickname = #{linkOwnerNickname,jdbcType=VARCHAR},</if>
+            <if test="linkOwnerContact != null" >link_owner_contact = #{linkOwnerContact,jdbcType=VARCHAR},</if>
+            <if test="linkUpdateTime != null" >link_update_time = #{linkUpdateTime,jdbcType=TIMESTAMP},</if>
+            <if test="linkCreateTime != null" >link_create_time = #{linkCreateTime,jdbcType=TIMESTAMP},</if>
+            <if test="linkOrder != null" >link_order = #{linkOrder,jdbcType=INTEGER}, </if>
+            <if test="linkStatus != null" >link_status = #{linkStatus,jdbcType=INTEGER},</if>
+        </set>
+        where link_id = #{linkId,jdbcType=INTEGER}
+    </update>
 </mapper>

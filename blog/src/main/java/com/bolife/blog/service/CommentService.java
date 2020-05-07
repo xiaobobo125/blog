@@ -1,6 +1,7 @@
 package com.bolife.blog.service;
 
 import com.bolife.blog.entity.Comment;
+import com.github.pagehelper.PageInfo;
 
 import java.util.List;
 
@@ -35,4 +36,6 @@ public interface CommentService {
     List<Comment> listChildComment(Integer cid);
 
     void updateComment(Comment comment);
+
+    PageInfo<Comment> listCommentByPage(Integer pageIndex, Integer pageSize);
 }

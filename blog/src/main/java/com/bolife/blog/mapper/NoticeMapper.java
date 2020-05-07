@@ -25,4 +25,10 @@ public interface NoticeMapper {
     public List<Notice> listNotice(@Param("status") Integer status);
 
     Notice getNoticeById(@Param("noticeId") Integer noticeId);
+
+    void deleteById(Integer id);
+
+    void update(Notice notice);
+
+    void insert(Notice notice);
 }

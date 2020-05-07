@@ -19,4 +19,12 @@ public interface MenuService {
     * @Date: 2020/5/5
     */
     public List<Menu> listMenu();
+
+    Menu insertMenu(Menu menu) ;
+
+    void deleteMenu(Integer id) ;
+
+    void updateMenu(Menu menu) ;
+
+    Menu getMenuById(Integer id) ;
 }

@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.bolife.blog.mapper.PageMapper" >
+    <resultMap id="BaseResultMap" type="com.bolife.blog.entity.Page" >
+        <id column="page_id" property="pageId" jdbcType="INTEGER" />
+        <result column="page_key" property="pageKey" jdbcType="VARCHAR" />
+        <result column="page_title" property="pageTitle" jdbcType="VARCHAR" />
+        <result column="page_content" property="pageContent" jdbcType="VARCHAR" />
+        <result column="page_create_time" property="pageCreateTime" jdbcType="TIMESTAMP" />
+        <result column="page_update_time" property="pageUpdateTime" jdbcType="TIMESTAMP" />
+        <result column="page_view_count" property="pageViewCount" jdbcType="INTEGER" />
+        <result column="page_comment_count" property="pageCommentCount" jdbcType="INTEGER" />
+        <result column="page_status" property="pageStatus" jdbcType="INTEGER" />
+    </resultMap>
+    <sql id="Base_Column_List" >
+        page_id, page_key, page_title, page_content, page_create_time, page_update_time,
+        page_view_count, page_comment_count, page_status
+    </sql>
+
+    <sql id="tb">page</sql>
+    <!--获得页面列表-->
+    <select id="listPage" resultType="com.bolife.blog.entity.Page">
+        SELECT
+        <include refid="Base_Column_List"/>
+        FROM <include refid="tb"/>
+        <where>
+            <if test="status!=null">
+                page_status=#{status}
+            </if>
+        </where>
+    </select>
+</mapper>

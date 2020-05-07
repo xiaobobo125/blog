@@ -26,4 +26,25 @@ public class LinkServiceImpl implements LinkService {
     public Integer countLink(Integer status) {
         return linkMapper.countLink(status);
     }
+
+    @Override
+    public void insertLink(Link link) {
+        linkMapper.insertLink(link);
+    }
+
+    @Override
+    public Link getLinkById(Integer id)  {
+        return linkMapper.getLinkById(id);
+    }
+
+    @Override
+    public void deleteLink(Integer id) {
+        linkMapper.deleteLink(id);
+    }
+
+    @Override
+    public void updateLink(Link link) {
+        linkMapper.updateLink(link);
+    }
+
 }
