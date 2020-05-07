@@ -4,9 +4,11 @@ import com.bolife.blog.entity.Article;
 import com.bolife.blog.entity.Category;
 import com.bolife.blog.mapper.ArticleCategoryRefMappler;
 import com.bolife.blog.mapper.ArticleMapper;
+import com.bolife.blog.mapper.ArticleTagRefMapper;
 import com.bolife.blog.service.ArticleService;
 import com.github.pagehelper.PageHelper;
 import com.github.pagehelper.PageInfo;
+import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -21,11 +23,15 @@ import java.util.Map;
  */
 
 @Service
+@Slf4j
 public class ArticleServiceImpl implements ArticleService {
     @Autowired(required = false)
     private ArticleMapper articleMapper;
     @Autowired(required = false)
     private ArticleCategoryRefMappler articleCategoryRefMappler;
+
+    @Autowired(required = false)
+    private ArticleTagRefMapper articleTagRefMapper;
 
     @Override
     public PageInfo<Article> pageArticle(Integer pageIndex, Integer pageSize, Map<String, Object> criteria) {
@@ -118,5 +124,27 @@ public class ArticleServiceImpl implements ArticleService {
     @Override
     public void updateCommentCount(Integer articleId) {
         articleMapper.updateCommentCount(articleId);
+    }
+
+    @Override
+    public int countArticleByCategoryId(Integer id) {
+        Integer count = 0;
+        try {
+            count = articleCategoryRefMappler.countArticleByCategoryId(id);
+        } catch (Exception e) {
+            e.printStackTrace();
+            log.error("根据分类统计文章数量失败, categoryId:{}, cause:{}", id, e);
+        }
+        return count;
+    }
+
+    @Override
+    public Integer countArticleByTagId(Integer id) {
+        return articleTagRefMapper.countArticleByTagId(id);
+    }
+
+    @Override
+    public List<Article> listRecentArticle(int limit) {
+        return articleMapper.listArticleByLimit(limit);
     }
 }

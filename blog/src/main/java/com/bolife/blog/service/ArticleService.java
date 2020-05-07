@@ -125,6 +125,12 @@ public interface ArticleService {
     void updateArticle(Article article);
 
     void updateCommentCount(Integer articleId);
+
+    int countArticleByCategoryId(Integer id);
+
+    Integer countArticleByTagId(Integer id);
+
+    List<Article> listRecentArticle(int i);
 }
 
 

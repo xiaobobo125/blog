@@ -33,4 +33,11 @@ public interface CategoryService {
      */
     public Category getCategoryById(Integer cid);
 
+    List<Category> listCategoryWithCount();
+
+    void insert(Category category);
+
+    void deleteCategory(Integer id);
+
+    void updateCategory(Category category);
 }

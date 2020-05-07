@@ -24,11 +24,13 @@ public class SecurityInterceptor extends HandlerInterceptorAdapter {
             response.sendRedirect("/login");
             return false;
         }
+
         //设置登陆之后的权限
         if(user != null && user.getUserStatus() != 1){
             response.sendRedirect("/");
             return false;
         }
+
         return true;
     }
 

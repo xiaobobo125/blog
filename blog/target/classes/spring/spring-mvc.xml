@@ -50,6 +50,7 @@
         <mvc:interceptor>
             <mvc:mapping path="/admin/**"/>
             <mvc:exclude-mapping path="/admin/logout"/>
+            <mvc:exclude-mapping path="/admin/comment/**"/>
             <bean class="com.bolife.blog.intercepter.SecurityInterceptor"/>
         </mvc:interceptor>
     </mvc:interceptors>

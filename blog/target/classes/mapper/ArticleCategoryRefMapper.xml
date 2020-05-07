@@ -22,4 +22,16 @@
         WHERE article_id = #{value}
     </select>
 
+    <select id="countArticleByCategoryId" parameterType="java.lang.Integer" resultType="java.lang.Integer">
+        select count(*) from
+        <include refid="tb"/>
+        where category_id = #{value}
+    </select>
+
+    <delete id="deleteByCategoryId" parameterType="java.lang.Integer">
+        delete from
+        <include refid="tb"/>
+        where category_id = #{value}
+    </delete>
+
 </mapper>

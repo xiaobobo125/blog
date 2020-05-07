@@ -14,4 +14,13 @@
         WHERE article_tag_ref.article_id = #{value} AND
         article_tag_ref.tag_id = tag.tag_id
     </select>
+
+    <select id="countArticleByTagId" parameterType="java.lang.Integer" resultType="java.lang.Integer">
+        select count(*) from <include refid="tb"/>
+        where tag_id = #{value}
+    </select>
+
+    <delete id="deleteByTagId" parameterType="java.lang.Integer" >
+        delete from <include refid="tb"/> where tag_id = #{value}
+    </delete>
 </mapper>

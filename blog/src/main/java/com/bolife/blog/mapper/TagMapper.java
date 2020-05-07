@@ -36,4 +36,9 @@ public interface TagMapper {
      */
     Tag getTagById(@Param("tagId") Integer tagId);
 
+    void insert(Tag tag);
+
+    void update(Tag tag);
+
+    void deleteById(Integer id);
 }

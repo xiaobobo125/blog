@@ -17,6 +17,7 @@ import java.util.List;
 public class ArticleCategoryRefServiceImpl implements ArticleCategoryRefService {
     @Autowired(required = false)
     private ArticleCategoryRefMappler articleCategoryRefMappler;
+
     @Override
     public List<Category> listCategoryByArticleId(Integer value) {
         return articleCategoryRefMappler.listCategoryByArticleId(value);

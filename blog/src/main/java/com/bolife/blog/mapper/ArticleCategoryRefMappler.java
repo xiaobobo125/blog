@@ -28,4 +28,8 @@ public interface ArticleCategoryRefMappler {
      * @return
      */
     List<Integer> listCategoryIdByArticleId(@Param("value") Integer value);
+
+    Integer countArticleByCategoryId(Integer categoryId);
+
+    void deleteByCategoryId(Integer id);
 }

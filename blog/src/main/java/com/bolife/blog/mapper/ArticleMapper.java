@@ -126,4 +126,8 @@ public interface ArticleMapper {
     Integer updateArticle(Article article);
 
     void updateCommentCount(@Param(value = "articleId")Integer articleId);
+
+    int countArticleByCategoryId(Integer id);
+
+    List<Article> listArticleByLimit(int limit);
 }

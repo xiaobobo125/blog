@@ -15,6 +15,14 @@
         category_id, category_pid, category_name, category_description, category_order, category_icon
     </sql>
 
+    <insert id="insert" parameterType="com.bolife.blog.entity.Category">
+        insert into
+        <include refid="tb"/>
+        (category_pid, category_name,category_description, category_order, category_icon)
+        values (#{categoryPid,jdbcType=INTEGER}, #{categoryName,jdbcType=VARCHAR},
+        #{categoryDescription,jdbcType=VARCHAR}, #{categoryOrder,jdbcType=INTEGER}, #{categoryIcon,jdbcType=VARCHAR})
+    </insert>
+
     <select id="countCategory" resultType="INTEGER">
         SELECT
         count(*) FROM
@@ -35,5 +43,25 @@
         <include refid="tb"/>
         WHERE category_id = #{cid}
     </select>
+
+    <!--删除分类-->
+    <delete id="deleteCategory" parameterType="Integer">
+        DELETE FROM
+        <include refid="tb"/>
+        WHERE category_id=#{value}
+    </delete>
+
+    <update id="updateCategory" parameterType="com.bolife.blog.entity.Category">
+        update
+        <include refid="tb"/>
+        <set>
+            <if test="categoryPid != null">category_pid = #{categoryPid,jdbcType=INTEGER},</if>
+            <if test="categoryName != null">category_name = #{categoryName,jdbcType=VARCHAR},</if>
+            <if test="categoryDescription != null">category_description = #{categoryDescription,jdbcType=VARCHAR},</if>
+            <if test="categoryOrder != null">category_order = #{categoryOrder,jdbcType=INTEGER},</if>
+            <if test="categoryIcon != null">category_icon = #{categoryIcon,jdbcType=VARCHAR},</if>
+        </set>
+        where category_id = #{categoryId,jdbcType=INTEGER}
+    </update>
 
 </mapper>

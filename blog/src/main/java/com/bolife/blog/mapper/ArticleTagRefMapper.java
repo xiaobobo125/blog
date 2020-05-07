@@ -14,4 +14,8 @@ import java.util.List;
 @Mapper
 public interface ArticleTagRefMapper {
     List<Tag> listTagByArticleId(@Param("value") Integer articleId);
+
+    Integer countArticleByTagId(Integer tagId);
+
+    void deleteByTagId(Integer id);
 }

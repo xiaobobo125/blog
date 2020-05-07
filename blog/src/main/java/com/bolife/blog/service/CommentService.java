@@ -27,4 +27,12 @@ public interface CommentService {
     List<Comment> listCommentByArticleId(Integer aid);
 
     void insertComment(Comment comment);
+
+    Comment getCommentById(Integer cid);
+
+    void deleteComment(Integer cid);
+
+    List<Comment> listChildComment(Integer cid);
+
+    void updateComment(Comment comment);
 }

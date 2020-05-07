@@ -235,6 +235,7 @@ $("#scrolldiv").textSlider({line: 1, speed: 300, timer: 6000});
 
 function confirmDelete() {
     var msg = "您确定要删除吗？";
+
     if (confirm(msg) == true) {
         return true;
     } else {
@@ -266,6 +267,7 @@ function deleteComment(id) {
             contentType: "application/x-www-form-urlencoded; charset=utf-8",
             dataType: "text",
             complete: function () {
+                alert("asdasdas");
                 window.location.reload();
             }
         })

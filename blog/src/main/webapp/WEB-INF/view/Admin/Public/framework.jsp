@@ -35,7 +35,7 @@
                 <dl class="layui-nav-child">
                     <dd><a href="/admin/article/insert">文章</a></dd>
                     <dd><a href="/admin/page/insert">页面</a></dd>
-                    <dd><a href="/admin/category/insert">分类</a></dd>
+                    <dd><a href="/admin/category">分类</a></dd>
                     <dd><a href="/admin/notice/insert">公告</a></dd>
                     <dd><a href="/admin/link/insert">链接</a></dd>
                 </dl>
@@ -52,7 +52,7 @@
                 </dl>
             </li>
             <li class="layui-nav-item">
-                <a href="/admin/logout">退了</a>
+                <a href="/admin/logout">退出</a>
             </li>
         </ul>
     </div>

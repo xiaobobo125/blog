@@ -40,19 +40,15 @@ public class CommentController {
         comment.setCommentCreateTime(new Date());
         comment.setCommentIp(MyUtils.getIpAddr(request));
         Article article = articleService.getArticleByStatusAndId(EnArticleStatus.PUBLISH.getValue(), comment.getCommentArticleId());
-        if (request.getSession().getAttribute("user") != null &&
-                article.getArticleUserId().equals(comment.getCommentUserId())){
-            User user = (User) request.getSession().getAttribute("user");
+        comment.setCommentRole(EnRole.VISITOR.getValue());
+        User user = (User) request.getSession().getAttribute("user");
+        if ( user != null){
             comment.setCommentUserId(user.getUserId());
-            comment.setCommentRole(EnRole.ADMIN.getValue());
-        } else {
-            User user = (User) request.getSession().getAttribute("user");
-            if(user != null)
-                comment.setCommentUserId(user.getUserId());
-            comment.setCommentRole(EnRole.VISITOR.getValue());
+            if (article.getArticleUserId().equals(comment.getCommentUserId())){
+                comment.setCommentRole(EnRole.ADMIN.getValue());
+            }
         }
         comment.setCommentAuthorAvatar(MyUtils.getGravatar(comment.getCommentAuthorEmail()));
-
         //过滤字符，防止XSS攻击
         comment.setCommentContent(HtmlUtil.escape(comment.getCommentContent()));
         comment.setCommentAuthorName(HtmlUtil.escape(comment.getCommentAuthorName()));

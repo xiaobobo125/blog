@@ -11,6 +11,15 @@
     </sql>
     <sql id="tb">tag</sql>
 
+    <insert id="insert" parameterType="com.bolife.blog.entity.Tag">
+        insert into
+        <include refid="tb"/>
+        (tag_name, tag_description)
+        values (#{tagName,jdbcType=VARCHAR},
+        #{tagDescription,jdbcType=VARCHAR})
+    </insert>
+
+
     <!--获得标签总数-->
     <select id="countTag" resultType="Integer">
         SELECT COUNT(*) FROM <include refid="tb"/>
@@ -32,4 +41,22 @@
             </if>
         </where>
     </select>
+
+    <update id="update" parameterType="com.bolife.blog.entity.Tag" >
+        update <include refid="tb"/>
+        <set >
+            <if test="tagName != null" >
+                tag_name = #{tagName,jdbcType=VARCHAR},
+            </if>
+            <if test="tagDescription != null" >
+                tag_description = #{tagDescription,jdbcType=VARCHAR}
+            </if>
+        </set>
+        where tag_id = #{tagId,jdbcType=INTEGER}
+    </update>
+
+    <delete id="deleteById" parameterType="java.lang.Integer" >
+        delete from <include refid="tb"/>
+        where tag_id = #{tagId,jdbcType=INTEGER}
+    </delete>
 </mapper>

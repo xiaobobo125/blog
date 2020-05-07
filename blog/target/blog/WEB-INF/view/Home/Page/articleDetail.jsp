@@ -386,13 +386,13 @@
                                                     </span>
                                                     <fmt:formatDate value="${c.commentCreateTime}"
                                                                     pattern="yyyy年MM月dd日 HH:mm:ss"/>&nbsp;
-                                                    
-                                                    <c:if test="${sessionScope.user != null && c2.commentUserId eq sessionScope.user.userId}">
-                                                        <a href="javascript:void(0)"
+                                                    <c:if test="${(sessionScope.user != null && c.commentUserId eq sessionScope.user.userId)
+                                                                || article.articleUserId eq sessionScope.user.userId}">
+                                                        <a href="javascript:;"
                                                            onclick="deleteComment(${c.commentId})">删除</a>
-                                                        <a class="comment-edit-link"
-                                                           href="/admin/comment/edit/${c.commentId}"
-                                                           target="_blank">编辑</a>
+                                                        <%--<a class="comment-edit-link"--%>
+                                                           <%--href="/admin/comment/edit/${c.commentId}"--%>
+                                                           <%--target="_blank">编辑</a>--%>
                                                     </c:if>
                                                     <span class="floor"> &nbsp;${floor}楼 </span>
                                                 </span>
@@ -436,12 +436,13 @@
                                                         </span>
                                                         <fmt:formatDate value="${c2.commentCreateTime}"
                                                                         pattern="yyyy年MM月dd日 HH:mm:ss"/>&nbsp;
-                                                        <c:if test="${sessionScope.user != null && c2.commentUserId eq sessionScope.user.userId}">
+                                                        <c:if test="${(sessionScope.user != null && c.commentUserId eq sessionScope.user.userId)
+                                                                || article.articleUserId eq sessionScope.user.userId}">
                                                             <a href="javascript:void(0)"
                                                                onclick="deleteComment(${c2.commentId})">删除</a>
-                                                            <a class="comment-edit-link"
-                                                               href="/admin/comment/edit/${c2.commentId}"
-                                                               target="_blank">编辑</a>
+                                                            <%--<a class="comment-edit-link"--%>
+                                                               <%--href="/admin/comment/edit/${c2.commentId}"--%>
+                                                               <%--target="_blank">编辑</a>--%>
                                                         </c:if>
                                                         <span class="floor"> &nbsp;${floor2}层 </span>
                                                     </span>

@@ -31,4 +31,11 @@ public interface TagService {
 
     Tag getTagById(Integer tagId);
 
+    List<Tag> listTagWithCount();
+
+    void insert(Tag tag);
+
+    void updateTag(Tag tag);
+
+    void deleteTag(Integer id);
 }

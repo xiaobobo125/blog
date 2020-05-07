@@ -4,6 +4,7 @@
     <resultMap id="BaseResultMap" type="com.bolife.blog.entity.Comment">
         <id column="comment_id" property="commentId" jdbcType="INTEGER"/>
         <result column="comment_pid" property="commentPid" jdbcType="INTEGER"/>
+        <result column="comment_user_id" property="commentUserId" jdbcType="INTEGER"/>
         <result column="comment_pname" property="commentPname" jdbcType="VARCHAR"/>
         <result column="comment_article_id" property="commentArticleId" jdbcType="INTEGER"/>
         <result column="comment_author_name" property="commentAuthorName" jdbcType="VARCHAR"/>
@@ -19,7 +20,7 @@
     <sql id="tb">comment</sql>
 
     <sql id="Base_Column_List">
-        comment_id, comment_pid, comment_pname, comment_article_id, comment_author_name,
+        comment_id, comment_user_id, comment_pid, comment_pname, comment_article_id, comment_author_name,
         comment_author_email, comment_author_url, comment_author_avatar, comment_content, comment_agent,
         comment_ip,comment_create_time, comment_role
     </sql>
@@ -44,17 +45,62 @@
         ORDER BY comment_id ASC
     </select>
 
+    <select id="getCommentById" parameterType="Integer" resultType="com.bolife.blog.entity.Comment">
+        SELECT
+        <include refid="Base_Column_List"/>
+        FROM
+        <include refid="tb"/>
+        WHERE
+        comment_id = #{cid}
+    </select>
+
+    <delete id="deleteComment" parameterType="java.lang.Integer">
+        delete from
+        <include refid="tb"/>
+        where comment_id = #{cid,jdbcType=INTEGER}
+    </delete>
+
     <insert id="insert" parameterType="com.bolife.blog.entity.Comment" useGeneratedKeys="true" keyProperty="commentId">
         insert into
         <include refid="tb"/>
-        (comment_pid, comment_pname, comment_article_id,
+        (comment_pid,comment_user_id, comment_pname, comment_article_id,
         comment_author_name, comment_author_email,
         comment_author_url, comment_author_avatar, comment_content, comment_agent,
         comment_ip, comment_create_time, comment_role)
-        values (#{commentPid,jdbcType=INTEGER}, #{commentPname,jdbcType=VARCHAR}, #{commentArticleId,jdbcType=INTEGER},
+        values (#{commentPid,jdbcType=INTEGER},#{commentUserId,jdbcType=INTEGER}, #{commentPname,jdbcType=VARCHAR}, #{commentArticleId,jdbcType=INTEGER},
         #{commentAuthorName,jdbcType=VARCHAR}, #{commentAuthorEmail,jdbcType=VARCHAR},
         #{commentAuthorUrl,jdbcType=VARCHAR},#{commentAuthorAvatar}, #{commentContent,jdbcType=VARCHAR},
         #{commentAgent,jdbcType=VARCHAR},
         #{commentIp,jdbcType=VARCHAR}, #{commentCreateTime,jdbcType=TIMESTAMP}, #{commentRole,jdbcType=INTEGER})
     </insert>
+
+    <select id="listChildComment" resultType="com.bolife.blog.entity.Comment">
+        SELECT
+        <include refid="Base_Column_List"/>
+        FROM
+        <include refid="tb"/>
+        WHERE
+        comment_pid=#{cid}
+    </select>
+
+    <update id="update" parameterType="com.bolife.blog.entity.Comment">
+        update
+        <include refid="tb"/>
+        <set>
+            <if test="commentPid != null">comment_pid = #{commentPid,jdbcType=INTEGER},</if>
+            <if test="commentUserId != null">comment_user_id = #{commentUserId,jdbcType=INTEGER},</if>
+            <if test="commentPname != null">comment_pname = #{commentPname,jdbcType=VARCHAR},</if>
+            <if test="commentArticleId != null">comment_article_id = #{commentArticleId,jdbcType=INTEGER},</if>
+            <if test="commentAuthorName != null">comment_author_name = #{commentAuthorName,jdbcType=VARCHAR},</if>
+            <if test="commentAuthorEmail != null">comment_author_email = #{commentAuthorEmail,jdbcType=VARCHAR},</if>
+            <if test="commentAuthorUrl != null">comment_author_url = #{commentAuthorUrl,jdbcType=VARCHAR},</if>
+            <if test="commentContent != null">comment_content = #{commentContent,jdbcType=VARCHAR},</if>
+            <if test="commentAgent != null">comment_agent = #{commentAgent,jdbcType=VARCHAR},</if>
+            <if test="commentIp != null">comment_ip = #{commentIp,jdbcType=VARCHAR},</if>
+            <if test="commentCreateTime != null">comment_create_time = #{commentCreateTime,jdbcType=TIMESTAMP},</if>
+            <if test="commentAuthorAvatar != null">comment_author_avatar = #{commentAuthorAvatar},</if>
+            <if test="commentRole != null">comment_role = #{commentRole,jdbcType=INTEGER},</if>
+        </set>
+        where comment_id = #{commentId,jdbcType=INTEGER}
+    </update>
 </mapper>

@@ -55,4 +55,34 @@ public class CommentServiceImpl implements CommentService {
             log.error("创建评论失败：comment:{}, cause:{}", comment, e);
         }
     }
+
+    @Override
+    public Comment getCommentById(Integer cid) {
+        return commentMapper.getCommentById(cid);
+    }
+
+    @Override
+    public void deleteComment(Integer cid) {
+        try {
+            commentMapper.deleteComment(cid);
+        } catch (Exception e) {
+            e.printStackTrace();
+            log.error("删除评论失败, id:{}, cause:{}", cid, e);
+        }
+    }
+
+    @Override
+    public List<Comment> listChildComment(Integer cid) {
+        return commentMapper.listChildComment(cid);
+    }
+
+    @Override
+    public void updateComment(Comment comment) {
+            try {
+                commentMapper.update(comment);
+            } catch (Exception e) {
+                e.printStackTrace();
+                log.error("更新评论，comment:{}, cause:{}", comment, e);
+            }
+        }
 }

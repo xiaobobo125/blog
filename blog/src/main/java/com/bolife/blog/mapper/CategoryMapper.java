@@ -33,4 +33,9 @@ public interface CategoryMapper {
      */
     Category getCategoryById(@Param("cid") Integer cid);
 
+    void insert(Category category);
+
+    void deleteCategory(Integer id);
+
+    void updateCategory(Category category);
 }
