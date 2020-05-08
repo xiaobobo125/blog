@@ -8,6 +8,11 @@
 
     <sql id="tb">article_tag_ref</sql>
 
+    <insert id="insert" parameterType="java.lang.Integer" >
+        insert into <include refid="tb"/>
+        (article_id, tag_id)
+        values (#{articleId}, #{tagId})
+    </insert>
 
     <select id="listTagByArticleId" parameterType="java.lang.Integer" resultType="com.bolife.blog.entity.Tag">
         SELECT tag.* FROM tag, article_tag_ref
@@ -22,5 +27,9 @@
 
     <delete id="deleteByTagId" parameterType="java.lang.Integer" >
         delete from <include refid="tb"/> where tag_id = #{value}
+    </delete>
+
+    <delete id="deleteByArticleId" parameterType="java.lang.Integer" >
+        delete from <include refid="tb"/> where article_id = #{value}
     </delete>
 </mapper>

@@ -16,6 +16,13 @@
         ORDER BY category.category_pid asc
     </select>
 
+    <insert id="insert" parameterType="java.lang.Integer">
+        insert into
+        <include refid="tb"/>
+        (article_id, category_id)
+        values (#{articleId}, #{categoryId})
+    </insert>
+
     <select id="listCategoryIdByArticleId" resultType="Integer">
         SELECT category_id FROM
         <include refid="tb"/>
@@ -34,4 +41,9 @@
         where category_id = #{value}
     </delete>
 
+    <delete id="deleteByArticleId" parameterType="java.lang.Integer">
+        delete from
+        <include refid="tb"/>
+        where article_id = #{value}
+    </delete>
 </mapper>

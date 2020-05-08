@@ -132,4 +132,10 @@ public interface ArticleMapper {
     List<Article> listArticleByLimit(int limit);
 
     Integer countArticleByUser(Integer userId);
+
+    void insert(Article article);
+
+    void deleteById(Integer id);
+
+    void update(Article article);
 }

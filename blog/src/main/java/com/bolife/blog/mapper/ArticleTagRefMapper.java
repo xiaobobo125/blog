@@ -1,5 +1,6 @@
 package com.bolife.blog.mapper;
 
+import com.bolife.blog.entity.ArticleTagRef;
 import com.bolife.blog.entity.Tag;
 import org.apache.ibatis.annotations.Mapper;
 import org.apache.ibatis.annotations.Param;
@@ -18,4 +19,8 @@ public interface ArticleTagRefMapper {
     Integer countArticleByTagId(Integer tagId);
 
     void deleteByTagId(Integer id);
+
+    void insert(ArticleTagRef articleTagRef);
+
+    void deleteByArticleId(Integer articleId);
 }

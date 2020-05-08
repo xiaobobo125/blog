@@ -131,6 +131,12 @@ public interface ArticleService {
     Integer countArticleByTagId(Integer id);
 
     List<Article> listRecentArticle(int i);
+
+    void insertArticle(Article article);
+
+    void deleteArticle(Integer id);
+
+    void updateArticleDetail(Article article);
 }
 
 

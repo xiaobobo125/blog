@@ -1,7 +1,10 @@
 package com.bolife.blog.service.impl;
 
 import com.bolife.blog.entity.Article;
+import com.bolife.blog.entity.ArticleCategoryRef;
+import com.bolife.blog.entity.ArticleTagRef;
 import com.bolife.blog.entity.Category;
+import com.bolife.blog.enums.ArticleCommentStatus;
 import com.bolife.blog.mapper.ArticleCategoryRefMappler;
 import com.bolife.blog.mapper.ArticleMapper;
 import com.bolife.blog.mapper.ArticleTagRefMapper;
@@ -11,8 +14,10 @@ import com.github.pagehelper.PageInfo;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+import org.springframework.transaction.annotation.Transactional;
 
 import java.util.ArrayList;
+import java.util.Date;
 import java.util.List;
 import java.util.Map;
 
@@ -146,5 +151,61 @@ public class ArticleServiceImpl implements ArticleService {
     @Override
     public List<Article> listRecentArticle(int limit) {
         return articleMapper.listArticleByLimit(limit);
+    }
+
+    @Override
+    @Transactional(rollbackFor = Exception.class)
+    public void insertArticle(Article article) {
+        //添加文章
+        article.setArticleCreateTime(new Date());
+        article.setArticleUpdateTime(new Date());
+        article.setArticleIsComment(ArticleCommentStatus.ALLOW.getValue());
+        article.setArticleViewCount(0);
+        article.setArticleLikeCount(0);
+        article.setArticleCommentCount(0);
+        article.setArticleOrder(1);
+        articleMapper.insert(article);
+        //添加分类和文章关联
+        for (int i = 0; i < article.getCategoryList().size(); i++) {
+            ArticleCategoryRef articleCategoryRef = new ArticleCategoryRef(article.getArticleId(), article.getCategoryList().get(i).getCategoryId());
+            articleCategoryRefMappler.insert(articleCategoryRef);
+        }
+        //添加标签和文章关联
+        for (int i = 0; i < article.getTagList().size(); i++) {
+            ArticleTagRef articleTagRef = new ArticleTagRef(article.getArticleId(), article.getTagList().get(i).getTagId());
+            articleTagRefMapper.insert(articleTagRef);
+        }
+    }
+
+    @Override
+    public void deleteArticle(Integer id) {
+        articleMapper.deleteById(id);
+    }
+
+    @Override
+    @Transactional(rollbackFor = Exception.class)
+    public void updateArticleDetail(Article article) {
+        article.setArticleUpdateTime(new Date());
+        articleMapper.update(article);
+
+        if (article.getTagList() != null) {
+            //删除标签和文章关联
+            articleTagRefMapper.deleteByArticleId(article.getArticleId());
+            //添加标签和文章关联
+            for (int i = 0; i < article.getTagList().size(); i++) {
+                ArticleTagRef articleTagRef = new ArticleTagRef(article.getArticleId(), article.getTagList().get(i).getTagId());
+                articleTagRefMapper.insert(articleTagRef);
+            }
+        }
+
+        if (article.getCategoryList() != null) {
+            //添加分类和文章关联
+            articleCategoryRefMappler.deleteByArticleId(article.getArticleId());
+            //删除分类和文章关联
+            for (int i = 0; i < article.getCategoryList().size(); i++) {
+                ArticleCategoryRef articleCategoryRef = new ArticleCategoryRef(article.getArticleId(), article.getCategoryList().get(i).getCategoryId());
+                articleCategoryRefMappler.insert(articleCategoryRef);
+            }
+        }
     }
 }

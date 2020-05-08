@@ -1,5 +1,6 @@
 package com.bolife.blog.mapper;
 
+import com.bolife.blog.entity.ArticleCategoryRef;
 import com.bolife.blog.entity.Category;
 import org.apache.ibatis.annotations.Mapper;
 import org.apache.ibatis.annotations.Param;
@@ -32,4 +33,8 @@ public interface ArticleCategoryRefMappler {
     Integer countArticleByCategoryId(Integer categoryId);
 
     void deleteByCategoryId(Integer id);
+
+    void insert(ArticleCategoryRef articleCategoryRef);
+
+    void deleteByArticleId(Integer articleId);
 }

@@ -20,104 +20,146 @@
       <file leaf-file-name="AdminArticleController.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/com/bolife/blog/conntroller/admin/AdminArticleController.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="648">
-              <caret line="41" column="43" lean-forward="false" selection-start-line="41" selection-start-column="43" selection-end-line="41" selection-end-column="43" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="AdminCategoryController.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/com/bolife/blog/conntroller/admin/AdminCategoryController.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-66">
-              <caret line="53" column="43" lean-forward="false" selection-start-line="53" selection-start-column="43" selection-end-line="53" selection-end-column="43" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="AdminTagController.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/com/bolife/blog/conntroller/admin/AdminTagController.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-66">
-              <caret line="53" column="43" lean-forward="false" selection-start-line="53" selection-start-column="43" selection-end-line="53" selection-end-column="43" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="AdminPageController.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/com/bolife/blog/conntroller/admin/AdminPageController.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="377">
-              <caret line="36" column="41" lean-forward="false" selection-start-line="36" selection-start-column="41" selection-end-line="36" selection-end-column="41" />
+            <state relative-caret-position="97">
+              <caret line="185" column="45" lean-forward="false" selection-start-line="185" selection-start-column="45" selection-end-line="185" selection-end-column="45" />
               <folding>
-                <element signature="imports" expanded="true" />
+                <element signature="e#4692#4693#0" expanded="true" />
+                <element signature="e#4740#4741#0" expanded="true" />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="AdminOptionsController.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/com/bolife/blog/conntroller/admin/AdminOptionsController.java">
+      <file leaf-file-name="ArticleService.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/com/bolife/blog/service/ArticleService.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1231">
-              <caret line="47" column="45" lean-forward="false" selection-start-line="47" selection-start-column="45" selection-end-line="47" selection-end-column="45" />
+            <state relative-caret-position="271">
+              <caret line="138" column="8" lean-forward="true" selection-start-line="138" selection-start-column="4" selection-end-line="138" selection-end-column="8" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="ArticleServiceImpl.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/com/bolife/blog/service/impl/ArticleServiceImpl.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="199">
+              <caret line="202" column="80" lean-forward="true" selection-start-line="202" selection-start-column="80" selection-end-line="202" selection-end-column="80" />
               <folding>
-                <element signature="imports" expanded="true" />
+                <element signature="e#4651#4652#0" expanded="true" />
+                <element signature="e#4713#4714#0" expanded="true" />
+                <element signature="e#5870#5871#0" expanded="true" />
+                <element signature="e#5914#5915#0" expanded="true" />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="AdminNoticeController.java" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/src/main/java/com/bolife/blog/conntroller/admin/AdminNoticeController.java">
+      <file leaf-file-name="ArticleTagRefMapper.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/com/bolife/blog/mapper/ArticleTagRefMapper.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="242">
-              <caret line="29" column="43" lean-forward="false" selection-start-line="29" selection-start-column="43" selection-end-line="29" selection-end-column="43" />
+            <state relative-caret-position="329">
+              <caret line="24" column="8" lean-forward="true" selection-start-line="24" selection-start-column="4" selection-end-line="24" selection-end-column="8" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="AdminCommentController.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/com/bolife/blog/conntroller/admin/AdminCommentController.java">
+      <file leaf-file-name="CategoryMapper.xml" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/resources/mapper/CategoryMapper.xml">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="126">
-              <caret line="38" column="8" lean-forward="false" selection-start-line="38" selection-start-column="8" selection-end-line="38" selection-end-column="8" />
+            <state relative-caret-position="-348">
+              <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+              <folding>
+                <marker date="1588831310768" expanded="true" signature="1069:1401" ph="insert into " />
+                <marker date="1588831310768" expanded="true" signature="1478:1506" ph="SELECT count... " />
+                <marker date="1588831310768" expanded="true" signature="1635:1781" ph="SELECT FROM order" />
+                <marker date="1588831310768" expanded="true" signature="1884:2012" ph="SELECT FROM WHERE" />
+                <marker date="1588831310768" expanded="true" signature="2109:2185" ph="DELETE FROM " />
+                <marker date="1588831310768" expanded="true" signature="2290:2930" ph="update categ... " />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="ArticleTagRefMapper.xml" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/resources/mapper/ArticleTagRefMapper.xml">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="503">
+              <caret line="33" column="13" lean-forward="false" selection-start-line="33" selection-start-column="13" selection-end-line="33" selection-end-column="13" />
+              <folding>
+                <marker date="1588907639490" expanded="true" signature="566:668" ph="insert into " />
+                <marker date="1588907639490" expanded="true" signature="803:941" ph="SELECT tag.*... tag" />
+                <marker date="1588907639490" expanded="true" signature="1068:1142" ph="select count... where" />
+                <marker date="1588907639490" expanded="true" signature="1233:1290" ph="delete from " />
+                <marker date="1588907639490" expanded="true" signature="1385:1446" ph="delete from " />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="articleDetail.jsp" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/view/Home/Page/articleDetail.jsp">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="203">
+              <caret line="61" column="27" lean-forward="true" selection-start-line="61" selection-start-column="27" selection-end-line="61" selection-end-column="53" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="AdminUserController.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/com/bolife/blog/conntroller/admin/AdminUserController.java">
+      <file leaf-file-name="ArticleCategoryRefMappler.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/com/bolife/blog/mapper/ArticleCategoryRefMappler.java">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="387">
-              <caret line="133" column="47" lean-forward="false" selection-start-line="133" selection-start-column="47" selection-end-line="133" selection-end-column="47" />
+              <caret line="38" column="8" lean-forward="true" selection-start-line="38" selection-start-column="4" selection-end-line="38" selection-end-column="8" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="framework.jsp" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/view/Admin/Public/framework.jsp">
+      <file leaf-file-name="ArticleCategoryRefMapper.xml" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/resources/mapper/ArticleCategoryRefMapper.xml">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="928">
-              <caret line="109" column="71" lean-forward="false" selection-start-line="109" selection-start-column="71" selection-end-line="109" selection-end-column="71" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="AdminMenuController.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/com/bolife/blog/conntroller/admin/AdminMenuController.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-74">
-              <caret line="80" column="47" lean-forward="false" selection-start-line="80" selection-start-column="47" selection-end-line="80" selection-end-column="47" />
+            <state relative-caret-position="590">
+              <caret line="47" column="13" lean-forward="false" selection-start-line="47" selection-start-column="13" selection-end-line="47" selection-end-column="13" />
               <folding>
-                <element signature="imports" expanded="true" />
+                <marker date="1588907670703" expanded="true" signature="669:963" ph="SELECT categ... category" />
+                <marker date="1588907670703" expanded="true" signature="1046:1166" ph="insert into " />
+                <marker date="1588907670703" expanded="true" signature="1255:1344" ph="SELECT categ... WHERE" />
+                <marker date="1588907670703" expanded="true" signature="1476:1563" ph="select count... where" />
+                <marker date="1588907670703" expanded="true" signature="1658:1736" ph="delete from " />
+                <marker date="1588907670703" expanded="true" signature="1830:1907" ph="delete from " />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="ArticleMapper.xml" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/resources/mapper/ArticleMapper.xml">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="706">
+              <caret line="279" column="14" lean-forward="true" selection-start-line="279" selection-start-column="14" selection-end-line="279" selection-end-column="14" />
+              <folding>
+                <marker date="1588907607284" expanded="true" signature="1866:1949" ph="SELECT COUNT... WHERE" />
+                <marker date="1588907607284" expanded="true" signature="2051:2160" ph="SELECT SUM(a... WHERE" />
+                <marker date="1588907607284" expanded="true" signature="2260:2358" ph="SELECT SUM(a... WHERE" />
+                <marker date="1588907607284" expanded="true" signature="2486:2718" ph="SELECT FROM WHERE" />
+                <marker date="1588907607284" expanded="true" signature="2812:3880" ph="SELECT artic... article" />
+                <marker date="1588907607284" expanded="true" signature="4336:4565" ph="UPDATE SET a... " />
+                <marker date="1588907607284" expanded="true" signature="4669:4850" ph="SELECT FROM WHERE" />
+                <marker date="1588907607284" expanded="true" signature="4986:5221" ph="SELECT FROM WHERE" />
+                <marker date="1588907607284" expanded="true" signature="5332:6174" ph="SELECT artic... article" />
+                <marker date="1588907607284" expanded="true" signature="6283:6509" ph="SELECT FROM WHERE" />
+                <marker date="1588907607284" expanded="true" signature="6632:6856" ph="SELECT FROM article_id" />
+                <marker date="1588907607284" expanded="true" signature="6975:7202" ph="SELECT FROM article_id" />
+                <marker date="1588907607284" expanded="true" signature="7310:7497" ph="SELECT artic... WHERE" />
+                <marker date="1588907607284" expanded="true" signature="7600:9030" ph="update artic... " />
+                <marker date="1588907607284" expanded="true" signature="9135:9463" ph="SELECT artic... ORDER" />
+                <marker date="1588907607284" expanded="true" signature="9569:9686" ph="SELECT COUNT... WHERE" />
+                <marker date="1588907607284" expanded="true" signature="9841:10660" ph="insert into " />
+                <marker date="1588907607284" expanded="true" signature="10746:10844" ph="delete from " />
+                <marker date="1588907607284" expanded="true" signature="10939:12369" ph="update artic... " />
               </folding>
             </state>
           </provider>
@@ -143,17 +185,17 @@
       <find>获取信息出错</find>
       <find>发表评论</find>
       <find>System.out.println(</find>
-      <find>liuyanzhao.ssm</find>
       <find>提交评论</find>
       <find>编辑</find>
       <find>deleteComment</find>
       <find>liuyanzhao.ssm.</find>
+      <find>liuyanzhao.ssm</find>
     </findStrings>
     <replaceStrings>
       <replace>articleInfo</replace>
       <replace>$(&quot;#sayhello&quot;).text</replace>
-      <replace>bolife</replace>
       <replace>bolife.</replace>
+      <replace>bolife</replace>
     </replaceStrings>
   </component>
   <component name="GradleLocalSettings">
@@ -164,13 +206,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/src/main/resources/mapper/TagMapper.xml" />
-        <option value="$PROJECT_DIR$/src/main/resources/mapper/ArticleTagRefMapper.xml" />
-        <option value="$PROJECT_DIR$/src/main/java/com/bolife/blog/intercepter/SecurityInterceptor.java" />
-        <option value="$PROJECT_DIR$/src/main/java/com/bolife/blog/conntroller/admin/AdminController.java" />
-        <option value="$PROJECT_DIR$/src/main/java/com/bolife/blog/service/ArticleService.java" />
-        <option value="$PROJECT_DIR$/src/main/java/com/bolife/blog/service/impl/ArticleServiceImpl.java" />
-        <option value="$PROJECT_DIR$/src/main/webapp/WEB-INF/view/Admin/index.jsp" />
         <option value="$PROJECT_DIR$/src/main/java/com/bolife/blog/service/impl/PageServiceImpl.java" />
         <option value="$PROJECT_DIR$/src/main/resources/mapper/PageMapper.xml" />
         <option value="$PROJECT_DIR$/src/main/java/com/bolife/blog/mapper/PageMapper.java" />
@@ -189,12 +224,10 @@
         <option value="$PROJECT_DIR$/src/main/resources/mapper/CommentMapper.xml" />
         <option value="$PROJECT_DIR$/src/main/webapp/WEB-INF/view/Admin/Comment/index.jsp" />
         <option value="$PROJECT_DIR$/src/main/webapp/WEB-INF/view/Admin/Comment/reply.jsp" />
-        <option value="$PROJECT_DIR$/src/main/java/com/bolife/blog/mapper/ArticleMapper.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/bolife/blog/mapper/UserMapper.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/bolife/blog/service/impl/UserServiceImpl.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/bolife/blog/service/UserService.java" />
         <option value="$PROJECT_DIR$/src/main/resources/mapper/UserMapper.xml" />
-        <option value="$PROJECT_DIR$/src/main/resources/mapper/ArticleMapper.xml" />
         <option value="$PROJECT_DIR$/src/main/java/com/bolife/blog/enums/MenuLevel.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/bolife/blog/service/MenuService.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/bolife/blog/service/impl/MenuServiceImpl.java" />
@@ -204,7 +237,6 @@
         <option value="$PROJECT_DIR$/src/main/java/com/bolife/blog/service/impl/OptionsServiceImpl.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/bolife/blog/mapper/OptionsMapper.java" />
         <option value="$PROJECT_DIR$/src/main/resources/mapper/OptionsMapper.xml" />
-        <option value="$PROJECT_DIR$/src/main/java/com/bolife/blog/conntroller/admin/AdminArticleController.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/bolife/blog/conntroller/admin/AdminPageController.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/bolife/blog/conntroller/admin/AdminLinkController.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/bolife/blog/conntroller/admin/AdminCommentController.java" />
@@ -215,6 +247,16 @@
         <option value="$PROJECT_DIR$/src/main/java/com/bolife/blog/conntroller/admin/AdminTagController.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/bolife/blog/conntroller/admin/AdminOptionsController.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/bolife/blog/conntroller/admin/AdminNoticeController.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/bolife/blog/conntroller/admin/AdminArticleController.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/bolife/blog/enums/PageStatus.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/bolife/blog/service/ArticleService.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/bolife/blog/mapper/ArticleMapper.java" />
+        <option value="$PROJECT_DIR$/src/main/resources/mapper/ArticleMapper.xml" />
+        <option value="$PROJECT_DIR$/src/main/java/com/bolife/blog/mapper/ArticleTagRefMapper.java" />
+        <option value="$PROJECT_DIR$/src/main/resources/mapper/ArticleTagRefMapper.xml" />
+        <option value="$PROJECT_DIR$/src/main/java/com/bolife/blog/service/impl/ArticleServiceImpl.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/bolife/blog/mapper/ArticleCategoryRefMappler.java" />
+        <option value="$PROJECT_DIR$/src/main/resources/mapper/ArticleCategoryRefMapper.xml" />
       </list>
     </option>
   </component>
@@ -621,13 +663,34 @@
               <item name="Admin" type="462c0819:PsiDirectoryNode" />
               <item name="Public" type="462c0819:PsiDirectoryNode" />
             </path>
+            <path>
+              <item name="blog" type="b2602c69:ProjectViewProjectNode" />
+              <item name="blog" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="webapp" type="462c0819:PsiDirectoryNode" />
+              <item name="WEB-INF" type="462c0819:PsiDirectoryNode" />
+              <item name="view" type="462c0819:PsiDirectoryNode" />
+              <item name="Home" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="blog" type="b2602c69:ProjectViewProjectNode" />
+              <item name="blog" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="webapp" type="462c0819:PsiDirectoryNode" />
+              <item name="WEB-INF" type="462c0819:PsiDirectoryNode" />
+              <item name="view" type="462c0819:PsiDirectoryNode" />
+              <item name="Home" type="462c0819:PsiDirectoryNode" />
+              <item name="Page" type="462c0819:PsiDirectoryNode" />
+            </path>
           </expand>
           <select />
         </subPane>
       </pane>
       <pane id="Scratches" />
-      <pane id="Scope" />
       <pane id="AndroidView" />
+      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -640,7 +703,7 @@
     <property name="aspect.path.notification.shown" value="true" />
     <property name="SearchEverywhereHistoryKey" value="&#9;FILE&#9;file://D:/gitreps/blog/src/main/java/com/bolife/blog/entity/ArticleCategoryRef.java" />
     <property name="run.code.analysis.last.selected.profile" value="pProject Default" />
-    <property name="last_opened_file_path" value="D:/226/Java/Java project/ForestBlog-master/ForestBlog" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
   </component>
   <component name="RecentsManager">
     <key name="CopyClassDialog.RECENTS_KEY">
@@ -648,11 +711,11 @@
       <recent name="com.bolife.blog.utils" />
     </key>
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="D:\gitreps\blog\src\main\java\com\bolife\blog\enums" />
       <recent name="D:\gitreps\blog\src\main\java\com\bolife\blog" />
       <recent name="D:\gitreps\blog\src\main\webapp\resource\assets\img" />
       <recent name="D:\gitreps\blog\src\main\java\com\bolife\blog\intercepter" />
       <recent name="D:\gitreps\blog\src\main\java\com\bolife\blog\utils\validateutil" />
-      <recent name="D:\gitreps\blog\src\main\java\com\bolife\blog\utils" />
     </key>
   </component>
   <component name="RunDashboard">
@@ -874,14 +937,16 @@
       <workItem from="1588734907556" duration="20819000" />
       <workItem from="1588819383947" duration="13409000" />
       <workItem from="1588844448172" duration="9590000" />
+      <workItem from="1588905415511" duration="1852000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="94592000" />
+    <option name="totallyTimeSpent" value="96444000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1936" height="1056" extended-state="6" />
+    <editor active="true" />
     <layout>
       <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3991276" sideWeight="0.5032051" order="9" side_tool="true" content_ui="tabs" />
@@ -900,11 +965,11 @@
       <window_info id="Image Layers" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
       <window_info id="Java Enterprise" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Capture Analysis" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3293348" sideWeight="0.49786323" order="5" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.3293348" sideWeight="0.49786323" order="5" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="false" weight="0.33" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
       <window_info id="Spring" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="13" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.18643162" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.18856838" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Web" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Theme Preview" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="true" content_ui="tabs" />
@@ -930,108 +995,6 @@
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/bolife/blog/service/ArticleService.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="3342">
-          <caret line="132" column="17" lean-forward="false" selection-start-line="132" selection-start-column="4" selection-end-line="132" selection-end-column="17" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/bolife/blog/service/impl/ArticleServiceImpl.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="300">
-          <caret line="147" column="55" lean-forward="false" selection-start-line="147" selection-start-column="55" selection-end-line="147" selection-end-column="55" />
-          <folding>
-            <element signature="e#4280#4281#0" expanded="false" />
-            <element signature="e#4346#4347#0" expanded="false" />
-            <element signature="e#4417#4418#0" expanded="false" />
-            <element signature="e#4479#4480#0" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/view/Admin/index.jsp">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="286">
-          <caret line="336" column="13" lean-forward="true" selection-start-line="336" selection-start-column="13" selection-end-line="336" selection-end-column="13" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/resources/mapper/PageMapper.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="416">
-          <caret line="27" column="36" lean-forward="false" selection-start-line="27" selection-start-column="30" selection-end-line="27" selection-end-column="36" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/bolife/blog/mapper/PageMapper.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="329">
-          <caret line="16" column="45" lean-forward="false" selection-start-line="16" selection-start-column="45" selection-end-line="16" selection-end-column="45" />
-          <folding>
-            <element signature="imports" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/bolife/blog/service/impl/PageServiceImpl.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="203">
-          <caret line="15" column="8" lean-forward="false" selection-start-line="15" selection-start-column="8" selection-end-line="15" selection-end-column="8" />
-          <folding>
-            <element signature="imports" expanded="false" />
-            <element signature="e#558#559#0" expanded="false" />
-            <element signature="e#608#609#0" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/bolife/blog/service/PageService.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="387">
-          <caret line="16" column="1" lean-forward="true" selection-start-line="16" selection-start-column="1" selection-end-line="16" selection-end-column="1" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/view/Admin/Link/insert.jsp">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-957">
-          <caret line="0" column="26" lean-forward="true" selection-start-line="0" selection-start-column="26" selection-end-line="0" selection-end-column="26" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/view/Admin/Link/index.jsp">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-2262">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/bolife/blog/service/impl/LinkServiceImpl.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="735">
-          <caret line="47" column="5" lean-forward="true" selection-start-line="47" selection-start-column="5" selection-end-line="47" selection-end-column="5" />
-          <folding>
-            <element signature="e#776#777#0" expanded="false" />
-            <element signature="e#819#820#0" expanded="false" />
-            <element signature="e#877#878#0" expanded="false" />
-            <element signature="e#926#927#0" expanded="false" />
-            <element signature="e#982#983#0" expanded="false" />
-            <element signature="e#1023#1024#0" expanded="false" />
-            <element signature="e#1078#1079#0" expanded="false" />
-            <element signature="e#1121#1122#0" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/com/bolife/blog/service/LinkService.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="329">
@@ -1044,7 +1007,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="413">
           <caret line="36" column="19" lean-forward="false" selection-start-line="36" selection-start-column="9" selection-end-line="36" selection-end-column="19" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1074,7 +1036,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="442">
           <caret line="32" column="8" lean-forward="false" selection-start-line="32" selection-start-column="4" selection-end-line="32" selection-end-column="8" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1115,7 +1076,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="355">
           <caret line="29" column="17" lean-forward="false" selection-start-line="29" selection-start-column="4" selection-end-line="29" selection-end-column="17" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1173,12 +1133,12 @@
         <state relative-caret-position="1431">
           <caret line="70" column="0" lean-forward="false" selection-start-line="70" selection-start-column="0" selection-end-line="70" selection-end-column="0" />
           <folding>
-            <element signature="e#1163#1164#0" expanded="true" />
-            <element signature="e#1204#1205#0" expanded="true" />
-            <element signature="e#1617#1618#0" expanded="true" />
-            <element signature="e#1670#1671#0" expanded="true" />
-            <element signature="e#1732#1733#0" expanded="true" />
-            <element signature="e#1787#1788#0" expanded="true" />
+            <element signature="e#1163#1164#0" expanded="false" />
+            <element signature="e#1204#1205#0" expanded="false" />
+            <element signature="e#1617#1618#0" expanded="false" />
+            <element signature="e#1670#1671#0" expanded="false" />
+            <element signature="e#1732#1733#0" expanded="false" />
+            <element signature="e#1787#1788#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -1197,7 +1157,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="416">
           <caret line="48" column="8" lean-forward="true" selection-start-line="48" selection-start-column="4" selection-end-line="48" selection-end-column="8" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1215,39 +1174,6 @@
             <marker date="1588851086595" expanded="true" signature="4618:4792" ph="SELECT FROM user_email" />
             <marker date="1588851086595" expanded="true" signature="4958:5086" ph="SELECT FROM ORDER" />
           </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/resources/mapper/ArticleMapper.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="503">
-          <caret line="240" column="13" lean-forward="false" selection-start-line="240" selection-start-column="13" selection-end-line="240" selection-end-column="13" />
-          <folding>
-            <marker date="1588851140905" expanded="true" signature="1866:1949" ph="SELECT COUNT... WHERE" />
-            <marker date="1588851140905" expanded="true" signature="2051:2160" ph="SELECT SUM(a... WHERE" />
-            <marker date="1588851140905" expanded="true" signature="2260:2358" ph="SELECT SUM(a... WHERE" />
-            <marker date="1588851140905" expanded="true" signature="2486:2718" ph="SELECT FROM WHERE" />
-            <marker date="1588851140905" expanded="true" signature="2812:3880" ph="SELECT artic... article" />
-            <marker date="1588851140905" expanded="true" signature="4336:4565" ph="UPDATE SET a... " />
-            <marker date="1588851140905" expanded="true" signature="4669:4850" ph="SELECT FROM WHERE" />
-            <marker date="1588851140905" expanded="true" signature="4986:5221" ph="SELECT FROM WHERE" />
-            <marker date="1588851140905" expanded="true" signature="5332:6174" ph="SELECT artic... article" />
-            <marker date="1588851140905" expanded="true" signature="6283:6509" ph="SELECT FROM WHERE" />
-            <marker date="1588851140905" expanded="true" signature="6632:6856" ph="SELECT FROM article_id" />
-            <marker date="1588851140905" expanded="true" signature="6975:7202" ph="SELECT FROM article_id" />
-            <marker date="1588851140905" expanded="true" signature="7310:7497" ph="SELECT artic... WHERE" />
-            <marker date="1588851140905" expanded="true" signature="7600:9030" ph="update artic... " />
-            <marker date="1588851140905" expanded="true" signature="9135:9463" ph="SELECT artic... ORDER" />
-            <marker date="1588851140905" expanded="true" signature="9569:9686" ph="SELECT COUNT... WHERE" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/bolife/blog/mapper/ArticleMapper.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="329">
-          <caret line="133" column="47" lean-forward="true" selection-start-line="133" selection-start-column="47" selection-end-line="133" selection-end-column="47" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1271,7 +1197,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="851">
           <caret line="43" column="5" lean-forward="false" selection-start-line="43" selection-start-column="5" selection-end-line="43" selection-end-column="5" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1279,7 +1204,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="503">
           <caret line="51" column="26" lean-forward="false" selection-start-line="51" selection-start-column="26" selection-end-line="51" selection-end-column="26" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1309,7 +1233,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="503">
           <caret line="32" column="5" lean-forward="false" selection-start-line="32" selection-start-column="5" selection-end-line="32" selection-end-column="5" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1317,7 +1240,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="329">
           <caret line="41" column="32" lean-forward="false" selection-start-line="41" selection-start-column="32" selection-end-line="41" selection-end-column="32" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1355,7 +1277,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/com/bolife/blog/conntroller/admin/AdminCommentController.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="126">
+        <state relative-caret-position="725">
           <caret line="38" column="8" lean-forward="false" selection-start-line="38" selection-start-column="8" selection-end-line="38" selection-end-column="8" />
           <folding />
         </state>
@@ -1363,7 +1285,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/com/bolife/blog/conntroller/admin/AdminUserController.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="387">
+        <state relative-caret-position="3364">
           <caret line="133" column="47" lean-forward="false" selection-start-line="133" selection-start-column="47" selection-end-line="133" selection-end-column="47" />
           <folding />
         </state>
@@ -1371,7 +1293,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/com/bolife/blog/conntroller/admin/AdminMenuController.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-74">
+        <state relative-caret-position="2001">
           <caret line="80" column="47" lean-forward="false" selection-start-line="80" selection-start-column="47" selection-end-line="80" selection-end-column="47" />
           <folding>
             <element signature="imports" expanded="true" />
@@ -1381,7 +1303,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/com/bolife/blog/conntroller/admin/AdminPageController.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="377">
+        <state relative-caret-position="812">
           <caret line="36" column="41" lean-forward="false" selection-start-line="36" selection-start-column="41" selection-end-line="36" selection-end-column="41" />
           <folding>
             <element signature="imports" expanded="true" />
@@ -1389,17 +1311,9 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/bolife/blog/conntroller/admin/AdminArticleController.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="648">
-          <caret line="41" column="43" lean-forward="false" selection-start-line="41" selection-start-column="43" selection-end-line="41" selection-end-column="43" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/com/bolife/blog/conntroller/admin/AdminCategoryController.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-66">
+        <state relative-caret-position="1189">
           <caret line="53" column="43" lean-forward="false" selection-start-line="53" selection-start-column="43" selection-end-line="53" selection-end-column="43" />
           <folding />
         </state>
@@ -1407,7 +1321,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/com/bolife/blog/conntroller/admin/AdminTagController.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-66">
+        <state relative-caret-position="1189">
           <caret line="53" column="43" lean-forward="false" selection-start-line="53" selection-start-column="43" selection-end-line="53" selection-end-column="43" />
           <folding />
         </state>
@@ -1415,7 +1329,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/com/bolife/blog/conntroller/admin/AdminOptionsController.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1231">
+        <state relative-caret-position="1189">
           <caret line="47" column="45" lean-forward="false" selection-start-line="47" selection-start-column="45" selection-end-line="47" selection-end-column="45" />
           <folding>
             <element signature="imports" expanded="true" />
@@ -1425,7 +1339,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/view/Admin/Public/framework.jsp">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="928">
+        <state relative-caret-position="3161">
           <caret line="109" column="71" lean-forward="false" selection-start-line="109" selection-start-column="71" selection-end-line="109" selection-end-column="71" />
           <folding />
         </state>
@@ -1433,8 +1347,160 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/com/bolife/blog/conntroller/admin/AdminNoticeController.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="242">
-          <caret line="29" column="43" lean-forward="false" selection-start-line="29" selection-start-column="43" selection-end-line="29" selection-end-column="43" />
+        <state relative-caret-position="126">
+          <caret line="63" column="5" lean-forward="true" selection-start-line="63" selection-start-column="5" selection-end-line="63" selection-end-column="5" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/bolife/blog/enums/ArticleCommentStatus.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/bolife/blog/enums/PageStatus.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/bolife/blog/mapper/ArticleMapper.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="387">
+          <caret line="139" column="8" lean-forward="true" selection-start-line="139" selection-start-column="4" selection-end-line="139" selection-end-column="8" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/resources/mapper/ArticleMapper.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="706">
+          <caret line="279" column="14" lean-forward="true" selection-start-line="279" selection-start-column="14" selection-end-line="279" selection-end-column="14" />
+          <folding>
+            <marker date="1588907607284" expanded="true" signature="1866:1949" ph="SELECT COUNT... WHERE" />
+            <marker date="1588907607284" expanded="true" signature="2051:2160" ph="SELECT SUM(a... WHERE" />
+            <marker date="1588907607284" expanded="true" signature="2260:2358" ph="SELECT SUM(a... WHERE" />
+            <marker date="1588907607284" expanded="true" signature="2486:2718" ph="SELECT FROM WHERE" />
+            <marker date="1588907607284" expanded="true" signature="2812:3880" ph="SELECT artic... article" />
+            <marker date="1588907607284" expanded="true" signature="4336:4565" ph="UPDATE SET a... " />
+            <marker date="1588907607284" expanded="true" signature="4669:4850" ph="SELECT FROM WHERE" />
+            <marker date="1588907607284" expanded="true" signature="4986:5221" ph="SELECT FROM WHERE" />
+            <marker date="1588907607284" expanded="true" signature="5332:6174" ph="SELECT artic... article" />
+            <marker date="1588907607284" expanded="true" signature="6283:6509" ph="SELECT FROM WHERE" />
+            <marker date="1588907607284" expanded="true" signature="6632:6856" ph="SELECT FROM article_id" />
+            <marker date="1588907607284" expanded="true" signature="6975:7202" ph="SELECT FROM article_id" />
+            <marker date="1588907607284" expanded="true" signature="7310:7497" ph="SELECT artic... WHERE" />
+            <marker date="1588907607284" expanded="true" signature="7600:9030" ph="update artic... " />
+            <marker date="1588907607284" expanded="true" signature="9135:9463" ph="SELECT artic... ORDER" />
+            <marker date="1588907607284" expanded="true" signature="9569:9686" ph="SELECT COUNT... WHERE" />
+            <marker date="1588907607284" expanded="true" signature="9841:10660" ph="insert into " />
+            <marker date="1588907607284" expanded="true" signature="10746:10844" ph="delete from " />
+            <marker date="1588907607284" expanded="true" signature="10939:12369" ph="update artic... " />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/bolife/blog/mapper/ArticleCategoryRefMappler.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="387">
+          <caret line="38" column="8" lean-forward="true" selection-start-line="38" selection-start-column="4" selection-end-line="38" selection-end-column="8" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/resources/mapper/ArticleCategoryRefMapper.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="590">
+          <caret line="47" column="13" lean-forward="false" selection-start-line="47" selection-start-column="13" selection-end-line="47" selection-end-column="13" />
+          <folding>
+            <marker date="1588907670703" expanded="true" signature="669:963" ph="SELECT categ... category" />
+            <marker date="1588907670703" expanded="true" signature="1046:1166" ph="insert into " />
+            <marker date="1588907670703" expanded="true" signature="1255:1344" ph="SELECT categ... WHERE" />
+            <marker date="1588907670703" expanded="true" signature="1476:1563" ph="select count... where" />
+            <marker date="1588907670703" expanded="true" signature="1658:1736" ph="delete from " />
+            <marker date="1588907670703" expanded="true" signature="1830:1907" ph="delete from " />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/bolife/blog/conntroller/admin/AdminArticleController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="97">
+          <caret line="185" column="45" lean-forward="false" selection-start-line="185" selection-start-column="45" selection-end-line="185" selection-end-column="45" />
+          <folding>
+            <element signature="e#4692#4693#0" expanded="true" />
+            <element signature="e#4740#4741#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/bolife/blog/service/ArticleService.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="271">
+          <caret line="138" column="8" lean-forward="true" selection-start-line="138" selection-start-column="4" selection-end-line="138" selection-end-column="8" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/bolife/blog/service/impl/ArticleServiceImpl.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="199">
+          <caret line="202" column="80" lean-forward="true" selection-start-line="202" selection-start-column="80" selection-end-line="202" selection-end-column="80" />
+          <folding>
+            <element signature="e#4651#4652#0" expanded="true" />
+            <element signature="e#4713#4714#0" expanded="true" />
+            <element signature="e#5870#5871#0" expanded="true" />
+            <element signature="e#5914#5915#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/bolife/blog/mapper/ArticleTagRefMapper.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="329">
+          <caret line="24" column="8" lean-forward="true" selection-start-line="24" selection-start-column="4" selection-end-line="24" selection-end-column="8" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/resources/mapper/CategoryMapper.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-348">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding>
+            <marker date="1588831310768" expanded="true" signature="1069:1401" ph="insert into " />
+            <marker date="1588831310768" expanded="true" signature="1478:1506" ph="SELECT count... " />
+            <marker date="1588831310768" expanded="true" signature="1635:1781" ph="SELECT FROM order" />
+            <marker date="1588831310768" expanded="true" signature="1884:2012" ph="SELECT FROM WHERE" />
+            <marker date="1588831310768" expanded="true" signature="2109:2185" ph="DELETE FROM " />
+            <marker date="1588831310768" expanded="true" signature="2290:2930" ph="update categ... " />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/resources/mapper/ArticleTagRefMapper.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="503">
+          <caret line="33" column="13" lean-forward="false" selection-start-line="33" selection-start-column="13" selection-end-line="33" selection-end-column="13" />
+          <folding>
+            <marker date="1588907639490" expanded="true" signature="566:668" ph="insert into " />
+            <marker date="1588907639490" expanded="true" signature="803:941" ph="SELECT tag.*... tag" />
+            <marker date="1588907639490" expanded="true" signature="1068:1142" ph="select count... where" />
+            <marker date="1588907639490" expanded="true" signature="1233:1290" ph="delete from " />
+            <marker date="1588907639490" expanded="true" signature="1385:1446" ph="delete from " />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/view/Home/Page/articleDetail.jsp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="203">
+          <caret line="61" column="27" lean-forward="true" selection-start-line="61" selection-start-column="27" selection-end-line="61" selection-end-column="53" />
           <folding />
         </state>
       </provider>
