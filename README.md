@@ -10,3 +10,6 @@
 主要涉及技术包括的包括 Maven、Spring、SpringMVC、MyBatis、Redis、JSP等。
 前端采用Layui框架和扒了一个[网站](http://liuyanzhao.com)的前台样式。 <br/>
 详细介绍：[https://liuyanzhao.com/6347.html](https://liuyanzhao.com/6347.html)
+
+##关于
+如果有侵犯您的权益的行为，请与我联系，将很快恢复您！
