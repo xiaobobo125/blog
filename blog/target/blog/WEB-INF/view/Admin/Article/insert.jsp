@@ -29,7 +29,14 @@
                 <input type="text" name="articleTitle" lay-verify="title" id="title" autocomplete="off" placeholder="请输入标题" class="layui-input">
             </div>
         </div>
-
+        <div class="layui-form-item">
+            <label class="layui-form-label">直接导入</label>
+            <div class="layui-input-block">
+                <button type="button" class="layui-btn" id="test8"><i class="layui-icon"></i>上传文件</button>
+                <input class="layui-btn" style="display: none" id="tt" value="111">
+                <button type="button" class="layui-btn" id="test9">开始上传</button>
+            </div>
+        </div>
         <div class="layui-form-item layui-form-text">
             <label class="layui-form-label">内容 <span style="color: #FF5722; ">*</span></label>
             <div class="layui-input-block">
@@ -169,7 +176,39 @@
 //        }
 
 
+        layui.use(['upload', 'layer'], function () {
+            var $ = layui.jquery
+                , layer = layui.layer
+                , upload = layui.upload;
 
+            upload.render({
+                elem: '#test8'
+                , url: '/ad,om'
+                , auto: false
+                , accept: 'file'
+                , bindAction: '#test9'
+                , ext: 'xls|xlsx'
+                , choose: function (obj) {
+                    var file = this.files = obj.pushFile();
+                    obj.preview(function (index, file, result) {
+                        document.getElementById("tt").style.display = "inline";
+                        var xx = document.getElementById("tt").value = file.name + '【' + (file.size / 1024 / 1024).toFixed(2) + 'MB' + '】';
+                    })
+                }
+                , done: function (res) {
+                    if (res.code == 1) {
+                        return layer.msg('Excel格式不对！');
+                    } else if (res.code == 2) {
+                        return layer.msg('文件导入失败！！');
+                    } else if (res.code == 3) {
+                        return layer.msg('文件上传失败！！');
+                    } else {
+                        return layer.msg('文件导入成功！！');
+                    }
+                }
+            });
+
+        });
     </script>
 
 </rapid:override>

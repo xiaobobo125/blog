@@ -14,6 +14,10 @@
             <a target="_blank" href="/map" >
                 <span class="font-text">站点地图</span>
             </a>
+            <a href="http://beian.miit.gov.cn/" target="_blank">
+                <img src="/img/icp.png" width="18" height="19">
+                <span class="font-text">鲁ICP备20023189</span>
+            </a>
         </p>
     </div>
     <!-- .site-info -->

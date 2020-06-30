@@ -267,7 +267,6 @@ function deleteComment(id) {
             contentType: "application/x-www-form-urlencoded; charset=utf-8",
             dataType: "text",
             complete: function () {
-                alert("asdasdas");
                 window.location.reload();
             }
         })
