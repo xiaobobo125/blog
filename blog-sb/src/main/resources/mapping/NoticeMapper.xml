@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.bolife.blogspringboot.mapper.NoticeMapper">
+    <resultMap id="BaseResultMap" type="com.bolife.blogspringboot.entity.Notice">
+        <result column="notice_id" property="noticeId" jdbcType="INTEGER"></result>
+        <result column="notice_title" property="noticeTitle" jdbcType="VARCHAR"></result>
+        <result column="notice_content" property="noticeContent" jdbcType="VARCHAR"></result>
+        <result column="notice_create_time" property="noticeCreateTime" jdbcType="TIMESTAMP"></result>
+        <result column="notice_update_time" property="noticeUpdateTime" jdbcType="TIMESTAMP"></result>
+        <result column="notice_status" property="noticeStatus" jdbcType="VARCHAR"></result>
+        <result column="notice_order" property="noticeOrder" jdbcType="VARCHAR"></result>
+    </resultMap>
+    <select id="findAllNotice" resultMap="BaseResultMap">
+        SELECT * FROM notice WHERE notice_status = 1
+    </select>
+</mapper>
