@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.bolife.blogspringboot.mapper.LinkMapper">
+    <resultMap id="BaseResultMap" type="com.bolife.blogspringboot.entity.Link">
+        <result column="link_id" property="linkId" jdbcType="INTEGER"></result>
+        <result column="link_url" property="linkUrl" jdbcType="VARCHAR"></result>
+        <result column="link_name" property="linkName" jdbcType="VARCHAR"></result>
+        <result column="link_image" property="linkImage" jdbcType="VARCHAR"></result>
+        <result column="link_description" property="linkDescription" jdbcType="VARCHAR"></result>
+        <result column="link_owner_nickname" property="linkOwnerNickname" jdbcType="VARCHAR"></result>
+        <result column="link_owner_contact" property="linkOwnerContact" jdbcType="VARCHAR"></result>
+        <result column="link_update_time" property="linkUpdateTime" jdbcType="TIMESTAMP"></result>
+        <result column="link_create_time" property="linkCreateTime" jdbcType="TIMESTAMP"></result>
+        <result column="link_order" property="linkOrder" jdbcType="INTEGER"></result>
+        <result column="link_status" property="linkStatus" jdbcType="INTEGER"></result>
+    </resultMap>
+    <select id="findAllLink" resultMap="BaseResultMap">
+        SELECT * FROM link
+    </select>
+    <select id="findCountLink" resultType="Integer">
+      SELECT COUNT(*) FROM link
+    </select>
+</mapper>

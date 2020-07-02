@@ -106,7 +106,7 @@
         if(typeof wpOnload=='function')wpOnload();
     </script>
 
-    <p id="backtoblog"><a href="/">&larr; 返回到风吟博客</a></p>
+    <p id="backtoblog"><a href="/">&larr; 返回到${options.optionSiteTitle}主页</a></p>
 
 </div>
 
@@ -137,7 +137,7 @@
                     if(data.code==0) {
                         alert(data.msg);
                     } else {
-                        window.location.href="/admin";
+                        window.location.href="/";
                     }
                 },
                 error: function () {

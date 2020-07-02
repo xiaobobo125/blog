@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.bolife.blogspringboot.mapper.CategoryMapper">
+    <resultMap id="BaseResultMap" type="com.bolife.blogspringboot.entity.Category">
+        <id column="category_id" property="categoryId" jdbcType="INTEGER"/>
+        <result column="category_pid" property="categoryPid" jdbcType="INTEGER"/>
+        <result column="category_name" property="categoryName" jdbcType="VARCHAR"/>
+        <result column="category_description" property="categoryDescription" jdbcType="VARCHAR"/>
+        <result column="category_order" property="categoryOrder" jdbcType="INTEGER"/>
+        <result column="category_icon" property="categoryIcon" jdbcType="VARCHAR"/>
+    </resultMap>
+    <select id="findAllCategory" resultMap="BaseResultMap">
+        SELECT * FROM category
+    </select>
+
+    <select id="findCountCategory" resultType="Integer">
+        SELECT COUNT(*) FROM category
+    </select>
+</mapper>

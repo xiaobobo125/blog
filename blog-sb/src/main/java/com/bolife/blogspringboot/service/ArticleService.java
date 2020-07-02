@@ -13,4 +13,10 @@ import java.util.List;
  */
 public interface ArticleService {
     public PageInfo<Article> getAllArticle(Integer pageNum,Integer pageSize);
+
+    Integer getCountArticle();
+
+    Integer getViewCount();
+
+    Article getArticleLastUpdate();
 }

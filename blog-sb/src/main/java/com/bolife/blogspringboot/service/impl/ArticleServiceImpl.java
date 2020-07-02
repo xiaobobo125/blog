@@ -28,4 +28,25 @@ public class ArticleServiceImpl implements ArticleService {
         PageInfo<Article> pageInfo = new PageInfo<>(allArticle);
         return pageInfo;
     }
+
+    @Override
+    public Integer getCountArticle() {
+        return articleMapper.findArticleCount();
+    }
+
+    @Override
+    public Integer getViewCount() {
+        List<Article> allArticle = articleMapper.findAllArticle();
+        Integer count = 0;
+        for (Article article : allArticle) {
+            count+=article.getArticleViewCount();
+        }
+        return count;
+    }
+
+    @Override
+    public Article getArticleLastUpdate() {
+        List<Article> allArticle = articleMapper.findAllArticle();
+        return allArticle.get(0);
+    }
 }

@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.bolife.blogspringboot.mapper.TagMapper">
+    <resultMap id="BaseResultMap" type="com.bolife.blogspringboot.entity.Tag">
+        <id column="tag_id" property="tagId" jdbcType="INTEGER" />
+        <result column="tag_name" property="tagName" jdbcType="VARCHAR" />
+        <result column="tag_description" property="tagDescription" jdbcType="VARCHAR" />
+    </resultMap>
+    <select id="findCountTag" resultType="Integer">
+        SELECT COUNT(*) FROM tag
+    </select>
+    <select id="findAllTag" resultMap="BaseResultMap">
+        SELECT * FROM tag
+    </select>
+</mapper>

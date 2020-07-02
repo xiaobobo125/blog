@@ -117,6 +117,11 @@
             class="widget-title"><i class="fa fa-bars"></i>近期评论</h3>
         <div id="message" class="message-widget">
             <ul>
+                <c:if test="${recentCommentList == null or  fn:length(recentCommentList) ==0}">
+                    <li style="border: none;">
+                       <span>近期还没有评论，快去发表评论吧！</span>
+                    </li>
+                </c:if>
                 <c:forEach items="${recentCommentList}" var="r">
                 <li style="border: none;">
                     <a href="/article/${r.commentArticleId}/#anchor-comment-${r.commentId}"  rel="external nofollow">

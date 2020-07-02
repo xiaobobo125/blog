@@ -13,4 +13,7 @@ import java.util.List;
 @Mapper
 public interface ArticleMapper {
     public List<Article> findAllArticle();
+
+    Integer findArticleCount();
+
 }

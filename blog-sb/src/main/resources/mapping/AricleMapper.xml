@@ -17,6 +17,10 @@
         <result column="article_status" property="articleStatus" jdbcType="INTEGER"/>
     </resultMap>
     <select id="findAllArticle" resultMap="BaseResultMap">
-        SELECT * FROM article WHERE article_status = 1
+        SELECT * FROM article WHERE article_status = 1 ORDER BY article_update_time DESC
+    </select>
+
+    <select id="findArticleCount" resultType="Integer">
+        SELECT count(*) FROM article WHERE article_status=1
     </select>
 </mapper>

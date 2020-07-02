@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.bolife.blogspringboot.mapper.CommentMapper">
+    <resultMap id="BaseResultMap" type="com.bolife.blogspringboot.entity.Comment">
+        <id column="comment_id" property="commentId" jdbcType="INTEGER"/>
+        <result column="comment_pid" property="commentPid" jdbcType="INTEGER"/>
+        <result column="comment_user_id" property="commentUserId" jdbcType="INTEGER"/>
+        <result column="comment_pname" property="commentPname" jdbcType="VARCHAR"/>
+        <result column="comment_article_id" property="commentArticleId" jdbcType="INTEGER"/>
+        <result column="comment_author_name" property="commentAuthorName" jdbcType="VARCHAR"/>
+        <result column="comment_author_email" property="commentAuthorEmail" jdbcType="VARCHAR"/>
+        <result column="comment_author_url" property="commentAuthorUrl" jdbcType="VARCHAR"/>
+        <result column="comment_author_avatar" property="commentAuthorAvatar" jdbcType="VARCHAR"/>
+        <result column="comment_content" property="commentContent" jdbcType="VARCHAR"/>
+        <result column="comment_agent" property="commentAgent" jdbcType="VARCHAR"/>
+        <result column="comment_ip" property="commentIp" jdbcType="VARCHAR"/>
+        <result column="comment_create_time" property="commentCreateTime" jdbcType="TIMESTAMP"/>
+        <result column="comment_role" property="commentRole" jdbcType="INTEGER"/>
+    </resultMap>
+    <select id="findCountComment" resultType="Integer">
+        SELECT COUNT(*) FROM comment
+    </select>
+    <select id="findNearComment" resultMap="BaseResultMap">
+        SELECT * FROM comment
+            <if test="number!=null">
+                limit #{number}
+            </if>
+    </select>
+</mapper>

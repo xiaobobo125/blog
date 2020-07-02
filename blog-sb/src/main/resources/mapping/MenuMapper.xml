@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.bolife.blogspringboot.mapper.MenuMapper">
+    <resultMap id="BaseResultMap" type="com.bolife.blogspringboot.entity.Menu">
+        <id column="menu_id" property="menuId" jdbcType="INTEGER" />
+        <result column="menu_name" property="menuName" jdbcType="VARCHAR" />
+        <result column="menu_url" property="menuUrl" jdbcType="VARCHAR" />
+        <result column="menu_level" property="menuLevel" jdbcType="INTEGER" />
+        <result column="menu_icon" property="menuIcon" jdbcType="VARCHAR" />
+        <result column="menu_order" property="menuOrder" jdbcType="INTEGER" />
+    </resultMap>
+    <select id="findAllMenu" resultMap="BaseResultMap">
+        SELECT * from menu ORDER  BY menu_order DESC
+    </select>
+</mapper>

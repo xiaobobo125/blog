@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.bolife.blogspringboot.mapper.UserMapper">
+    <resultMap id="BaseResultMap" type="com.bolife.blogspringboot.entity.User">
+        <id column="user_id" property="userId" jdbcType="INTEGER"/>
+        <result column="user_name" property="userName" jdbcType="VARCHAR"/>
+        <result column="user_pass" property="userPass" jdbcType="VARCHAR"/>
+        <result column="user_nickname" property="userNickname" jdbcType="VARCHAR"/>
+        <result column="user_email" property="userEmail" jdbcType="VARCHAR"/>
+        <result column="user_url" property="userUrl" jdbcType="VARCHAR"/>
+        <result column="user_avatar" property="userAvatar" jdbcType="VARCHAR"/>
+        <result column="user_last_login_ip" property="userLastLoginIp" jdbcType="VARCHAR"/>
+        <result column="user_register_time" property="userRegisterTime" jdbcType="TIMESTAMP"/>
+        <result column="user_last_login_time" property="userLastLoginTime" jdbcType="TIMESTAMP"/>
+        <result column="user_status" property="userStatus" jdbcType="INTEGER"/>
+    </resultMap>
+    <select id="findUserByUserName" resultMap="BaseResultMap">
+        SELECT * FROM user WHERE user_name=#{username}
+    </select>
+    <update id="updateUser" parameterType="com.bolife.blogspringboot.entity.User">
+        update user
+        <set>
+            <if test="user.userName != null">user_name = #{user.userName,jdbcType=VARCHAR},</if>
+            <if test="user.userPass != null">user_pass = #{user.userPass,jdbcType=VARCHAR},</if>
+            <if test="user.userNickname != null">user_nickname = #{user.userNickname,jdbcType=VARCHAR},</if>
+            <if test="user.userEmail != null">user_email = #{user.userEmail,jdbcType=VARCHAR},</if>
+            <if test="user.userUrl != null">user_url = #{user.userUrl,jdbcType=VARCHAR},</if>
+            <if test="user.userAvatar != null">user_avatar = #{user.userAvatar,jdbcType=VARCHAR},</if>
+            <if test="user.userLastLoginIp != null">user_last_login_ip = #{user.userLastLoginIp,jdbcType=VARCHAR},</if>
+            <if test="user.userRegisterTime != null">user_register_time = #{user.userRegisterTime,jdbcType=TIMESTAMP},</if>
+            <if test="user.userLastLoginTime != null">user_last_login_time = #{user.userLastLoginTime,jdbcType=TIMESTAMP},</if>
+            <if test="user.userStatus != null">user_status = #{user.userStatus,jdbcType=INTEGER},</if>
+        </set>
+        where user_id = #{user.userId,jdbcType=INTEGER}
+    </update>
+</mapper>
