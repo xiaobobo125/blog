@@ -12,4 +12,16 @@
     <select id="findAllTag" resultMap="BaseResultMap">
         SELECT * FROM tag
     </select>
+
+    <select id="getTagsByArticleId" resultMap="BaseResultMap" parameterType="Integer">
+        SELECT
+        tag.*
+        FROM tag, article_tag_ref
+        WHERE article_tag_ref.article_id = #{aid} AND
+        article_tag_ref.tag_id = tag.tag_id
+    </select>
+
+    <select id="findTagById" resultMap="BaseResultMap">
+        SELECT * FROM tag WHERE tag_id=#{tid}
+    </select>
 </mapper>

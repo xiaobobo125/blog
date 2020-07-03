@@ -302,7 +302,7 @@
                     <form id="comment_form" method="post">
                         <c:if test="${sessionScope.user!=null}">
                             <div class="user_avatar">
-                                <img alt="言曌"
+                                <img alt="MrBoBo"
                                      src="${sessionScope.user.userAvatar}"
                                      class="avatar avatar-64 photo" height="64" width="64">
                                 登录者：${sessionScope.user.userNickname}

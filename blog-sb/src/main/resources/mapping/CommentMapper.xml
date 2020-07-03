@@ -26,4 +26,8 @@
                 limit #{number}
             </if>
     </select>
+
+    <select id="findCommentByArticleId" resultMap="BaseResultMap">
+        SELECT * FROM comment WHERE comment_article_id = #{aid}
+    </select>
 </mapper>

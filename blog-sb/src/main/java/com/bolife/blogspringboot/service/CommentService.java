@@ -13,4 +13,6 @@ public interface CommentService {
     public Integer getCountComment();
 
     List<Comment> getNearComment(Integer i);
+
+    List<Comment> getCommentByArticleId(Integer aid);
 }

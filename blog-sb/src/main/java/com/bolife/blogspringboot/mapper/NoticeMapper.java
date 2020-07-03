@@ -2,6 +2,7 @@ package com.bolife.blogspringboot.mapper;
 
 import com.bolife.blogspringboot.entity.Notice;
 import org.apache.ibatis.annotations.Mapper;
+import org.apache.ibatis.annotations.Param;
 
 import java.util.List;
 
@@ -13,4 +14,6 @@ import java.util.List;
 @Mapper
 public interface NoticeMapper {
     List<Notice> findAllNotice();
+
+    Notice findNoticeById(@Param("nid") Integer nid);
 }

@@ -7,5 +7,6 @@ package com.bolife.blogspringboot.util;
  */
 public class FinalDefine {
     public final static String PAGESIZE = "10";
+    public final static String FILELOCATIONS = "D:/226/git/gitreps/uploads/";
 
 }

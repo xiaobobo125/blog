@@ -13,4 +13,8 @@ public interface CategoryService {
     List<Category> getAllCategory();
 
     Integer getCountCategory();
+
+    Category getCategoryById(Integer cid);
+
+    List<Category> getCategoiesByArticleId(Integer aid);
 }

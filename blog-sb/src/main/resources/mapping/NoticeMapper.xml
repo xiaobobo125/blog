@@ -13,4 +13,7 @@
     <select id="findAllNotice" resultMap="BaseResultMap">
         SELECT * FROM notice WHERE notice_status = 1
     </select>
+    <select id="findNoticeById" resultMap="BaseResultMap">
+        SELECT * FROM notice WHERE notice_id=#{nid}
+    </select>
 </mapper>

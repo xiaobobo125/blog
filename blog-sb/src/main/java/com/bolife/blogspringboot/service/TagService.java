@@ -1,5 +1,6 @@
 package com.bolife.blogspringboot.service;
 
+import com.bolife.blogspringboot.entity.Category;
 import com.bolife.blogspringboot.entity.Tag;
 
 import java.util.List;
@@ -12,4 +13,8 @@ import java.util.List;
 public interface TagService {
     public Integer getCountTag();
     public List<Tag> getAllTag();
+
+    List<Tag> getTagsByArticleId(Integer aid);
+
+    Tag getTagById(Integer tid);
 }

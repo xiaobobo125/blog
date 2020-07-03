@@ -35,7 +35,10 @@ public class HomeController {
 
     @Autowired
     private LinkService linkService;
-    
+
+    @Autowired
+    private CategoryService categoryService;
+
     
 
     @RequestMapping({"/","/article"})
@@ -43,7 +46,7 @@ public class HomeController {
                          @RequestParam(value = "pageSize",defaultValue = FinalDefine.PAGESIZE)Integer pageSize,
                         Model model){
         List<Notice> allNotice = noticeService.getAllNotice();
-        PageInfo<Article> allArticle = articleService.getAllArticle(pageIndex, pageSize);
+        PageInfo<Article> allArticle = articleService.getAllArticle(pageIndex, pageSize,null);
         List<Tag> allTag = tagServicel.getAllTag();
         List<Comment> nearComment = commentService.getNearComment(10);
         List<Link> allLink = linkService.getAllLink();
@@ -55,4 +58,31 @@ public class HomeController {
         model.addAttribute("pageUrlPrefix", "/article?pageIndex");
         return "Home/index";
     }
+    @RequestMapping(value = "/map")
+    public String siteMap(Model model) {
+        //文章显示
+        List<Article> articleList = articleService.getArticle();
+        model.addAttribute("articleList", articleList);
+        //分类显示
+        List<Category> categoryList = categoryService.getAllCategory();
+        model.addAttribute("categoryList", categoryList);
+        //标签显示
+        List<Tag> tagList = tagServicel.getAllTag();
+        model.addAttribute("tagList", tagList);
+
+        //侧边栏显示
+        //获得热评文章
+        List<Article> mostCommentArticleList = articleService.getArticleByComment(10);
+        model.addAttribute("mostCommentArticleList", mostCommentArticleList);
+        return "Home/Page/siteMap";
+    }
+    @RequestMapping("/404")
+    public String goError1(){
+        return "Home/Error/404";
+    }
+    @RequestMapping("/500")
+    public String goError2(){
+        return "Home/Error/500";
+    }
+
 }

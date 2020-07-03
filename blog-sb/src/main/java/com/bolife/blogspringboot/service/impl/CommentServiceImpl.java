@@ -26,4 +26,9 @@ public class CommentServiceImpl implements CommentService {
     public List<Comment> getNearComment(Integer i) {
         return commentMapper.findNearComment(i);
     }
+
+    @Override
+    public List<Comment> getCommentByArticleId(Integer aid) {
+        return commentMapper.findCommentByArticleId(aid);
+    }
 }

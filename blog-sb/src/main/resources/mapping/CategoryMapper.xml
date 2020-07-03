@@ -16,4 +16,16 @@
     <select id="findCountCategory" resultType="Integer">
         SELECT COUNT(*) FROM category
     </select>
+
+    <select id="findCategoryById" resultMap="BaseResultMap">
+        SELECT * FROM category WHERE category_id=#{id}
+    </select>
+    <select id="getCategoiesByArticleId" resultMap="BaseResultMap" parameterType="Integer">
+        SELECT
+        category.*
+        FROM category, article_category_ref
+        WHERE article_category_ref.article_id = #{aid} AND
+        article_category_ref.category_id = category.category_id
+        ORDER BY category.category_pid asc
+    </select>
 </mapper>

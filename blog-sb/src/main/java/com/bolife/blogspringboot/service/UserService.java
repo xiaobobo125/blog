@@ -1,6 +1,7 @@
 package com.bolife.blogspringboot.service;
 
 import com.bolife.blogspringboot.entity.User;
+import org.apache.ibatis.annotations.Param;
 
 /**
  * @Auther: Mr.BoBo

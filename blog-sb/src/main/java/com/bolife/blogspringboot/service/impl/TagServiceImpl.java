@@ -1,5 +1,6 @@
 package com.bolife.blogspringboot.service.impl;
 
+import com.bolife.blogspringboot.entity.Category;
 import com.bolife.blogspringboot.entity.Tag;
 import com.bolife.blogspringboot.mapper.TagMapper;
 import com.bolife.blogspringboot.service.TagService;
@@ -17,6 +18,7 @@ import java.util.List;
 public class TagServiceImpl implements TagService {
     @Autowired
     private TagMapper tagMapper;
+
     @Override
     public Integer getCountTag() {
         return tagMapper.findCountTag();
@@ -25,5 +27,15 @@ public class TagServiceImpl implements TagService {
     @Override
     public List<Tag> getAllTag() {
         return tagMapper.findAllTag();
+    }
+
+    @Override
+    public List<Tag> getTagsByArticleId(Integer aid) {
+        return tagMapper.getTagsByArticleId(aid);
+    }
+
+    @Override
+    public Tag getTagById(Integer tid) {
+        return tagMapper.findTagById(tid);
     }
 }
