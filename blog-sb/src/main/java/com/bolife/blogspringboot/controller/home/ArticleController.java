@@ -1,13 +1,7 @@
 package com.bolife.blogspringboot.controller.home;
 
-import com.bolife.blogspringboot.entity.Article;
-import com.bolife.blogspringboot.entity.Category;
-import com.bolife.blogspringboot.entity.Comment;
-import com.bolife.blogspringboot.entity.Tag;
-import com.bolife.blogspringboot.service.ArticleService;
-import com.bolife.blogspringboot.service.CategoryService;
-import com.bolife.blogspringboot.service.CommentService;
-import com.bolife.blogspringboot.service.TagService;
+import com.bolife.blogspringboot.entity.*;
+import com.bolife.blogspringboot.service.*;
 import com.github.pagehelper.PageInfo;
 import org.json.JSONObject;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -39,9 +33,14 @@ public class ArticleController {
     @Autowired
     private TagService tagService;
 
+    @Autowired
+    private UserService userService;
+
     @RequestMapping("/article/{aid}")
     public String goArticle(@PathVariable("aid")Integer aid, Model model){
         Article articleById = articleService.getArticleById(aid);
+        User userById = userService.getUserById(articleById.getArticleUserId());
+        articleById.setUser(userById);
         List<Article> articleByComment = articleService.getArticleByComment(5);
         List<Article> articleByRandom = articleService.getArticleByRandom(5);
         List<Tag> allTag = tagService.getAllTag();
@@ -100,5 +99,25 @@ public class ArticleController {
         model.addAttribute("recentCommentList", recentCommentList);
         model.addAttribute("pageUrlPrefix", "/search?pageIndex");
         return "Home/Page/search";
+    }
+
+    @RequestMapping(value = "/article/like/{aid}",method = RequestMethod.POST)
+    @ResponseBody
+    public String likeArticle(@PathVariable("aid")Integer aid){
+        Article articleById = articleService.getArticleById(aid);
+        articleById.setArticleLikeCount(articleById.getArticleLikeCount()+1);
+        articleService.updateArticle(articleById);
+        return new JSONObject(articleById.getArticleLikeCount()+1).toString();
+    }
+
+    @RequestMapping("/article/file")
+    public String articleFile(Model model) {
+        List<Article> articleList = articleService.getArticle();
+        model.addAttribute("articleList", articleList);
+        //侧边栏显示
+        //获得热评文章
+        List<Article> mostCommentArticleList = articleService.getArticleByComment(10);
+        model.addAttribute("mostCommentArticleList", mostCommentArticleList);
+        return "Home/Page/articleFile";
     }
 }

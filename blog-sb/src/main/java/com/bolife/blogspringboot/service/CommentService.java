@@ -15,4 +15,6 @@ public interface CommentService {
     List<Comment> getNearComment(Integer i);
 
     List<Comment> getCommentByArticleId(Integer aid);
+
+    void insertComment(Comment comment);
 }

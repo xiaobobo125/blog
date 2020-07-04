@@ -11,9 +11,10 @@ import org.apache.ibatis.annotations.Param;
  */
 @Mapper
 public interface UserMapper {
-    public User findUserByUserName(String username);
+    User findUserByUserName(String username);
 
     void updateUser(@Param("user") User user);
 
     User getUserById(@Param("uid") Integer uid);
+
 }

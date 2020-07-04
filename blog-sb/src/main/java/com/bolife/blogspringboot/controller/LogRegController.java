@@ -12,6 +12,7 @@ import org.springframework.web.bind.annotation.ResponseBody;
 import javax.servlet.http.Cookie;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
 import java.util.Date;
 import java.util.HashMap;
 import java.util.Map;
@@ -24,7 +25,7 @@ import static com.bolife.blogspringboot.util.MyUtils.getIpAddr;
  * @Description:
  */
 @Controller
-public class LoginController {
+public class LogRegController {
     @Autowired
     private UserService userService;
 
@@ -64,5 +65,47 @@ public class LoginController {
             userService.updateUser(user);
         }
         return new JSONObject(data).toString();
+    }
+
+    @RequestMapping(value = "/logout")
+    public String logout(HttpSession session) {
+        session.removeAttribute("user");
+        session.invalidate();
+        return "redirect:/login";
+    }
+
+    @RequestMapping("/regist")
+    public String registPage() {
+        return "Admin/regist";
+    }
+
+    @RequestMapping(value = "/registVerify",method = RequestMethod.POST)
+    @ResponseBody
+    public String verifyRegist(HttpServletRequest request, HttpServletResponse response){
+        Map<String, Object> map = new HashMap<String, Object>();
+        String username = request.getParameter("username");
+        String password = request.getParameter("password");
+        String email = request.getParameter("email");
+//        User user = userService.getUserByNameOrEmail(email);
+//        if(user!=null) {
+//            map.put("code",0);
+//            map.put("msg","该邮箱已被注册！");
+//        }else {
+//            //注册成功
+//            map.put("code",1);
+//            map.put("msg","");
+//            user = new User();
+//            user.setUserEmail(email);
+//            user.setUserNickname(username);
+//            user.setUserPass(password);
+//            user.setUserName(email);
+//            user.setUserLastLoginTime(new Date());
+//            user.setUserLastLoginIp(getIpAddr(request));
+//            user.setUserStatus(2);
+//            user.setUserAvatar("/img/default.jpg");
+//            userService.insert(user);
+//        }
+        String result = new JSONObject(map).toString();
+        return result;
     }
 }

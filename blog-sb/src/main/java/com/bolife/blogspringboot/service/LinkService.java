@@ -12,4 +12,6 @@ import java.util.List;
 public interface LinkService {
     public List<Link> getAllLink();
     public Integer getCountLink();
+
+    void insertLink(Link link);
 }

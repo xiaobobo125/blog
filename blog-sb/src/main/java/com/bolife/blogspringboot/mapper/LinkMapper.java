@@ -2,6 +2,7 @@ package com.bolife.blogspringboot.mapper;
 
 import com.bolife.blogspringboot.entity.Link;
 import org.apache.ibatis.annotations.Mapper;
+import org.apache.ibatis.annotations.Param;
 
 import java.util.List;
 
@@ -15,4 +16,6 @@ public interface LinkMapper {
     List<Link> findAllLink();
 
     Integer findCountLink();
+
+    void insert(@Param("link") Link link);
 }

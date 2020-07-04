@@ -30,4 +30,18 @@
     <select id="findCommentByArticleId" resultMap="BaseResultMap">
         SELECT * FROM comment WHERE comment_article_id = #{aid}
     </select>
+
+    <insert id="insertComment" parameterType="com.bolife.blogspringboot.entity.Comment" useGeneratedKeys="true" keyProperty="commentId">
+        insert into
+        comment
+        (comment_pid,comment_user_id, comment_pname, comment_article_id,
+        comment_author_name, comment_author_email,
+        comment_author_url, comment_author_avatar, comment_content, comment_agent,
+        comment_ip, comment_create_time, comment_role)
+        values (#{comment.commentPid,jdbcType=INTEGER},#{comment.commentUserId,jdbcType=INTEGER}, #{comment.commentPname,jdbcType=VARCHAR}, #{comment.commentArticleId,jdbcType=INTEGER},
+        #{comment.commentAuthorName,jdbcType=VARCHAR}, #{comment.commentAuthorEmail,jdbcType=VARCHAR},
+        #{comment.commentAuthorUrl,jdbcType=VARCHAR},#{comment.commentAuthorAvatar}, #{comment.commentContent,jdbcType=VARCHAR},
+        #{comment.commentAgent,jdbcType=VARCHAR},
+        #{comment.commentIp,jdbcType=VARCHAR}, #{comment.commentCreateTime,jdbcType=TIMESTAMP}, #{comment.commentRole,jdbcType=INTEGER})
+    </insert>
 </mapper>

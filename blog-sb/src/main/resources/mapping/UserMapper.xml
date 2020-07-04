@@ -33,7 +33,6 @@
         </set>
         where user_id = #{user.userId,jdbcType=INTEGER}
     </update>
-
     <select id="getUserById" resultMap="BaseResultMap">
         SELECT * FROM user WHERE user_id = #{uid}
     </select>

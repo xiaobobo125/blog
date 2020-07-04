@@ -39,4 +39,5 @@ public interface ArticleService {
     void updateArticle(Article articleById);
 
     List<Article> getArticle();
+    List<Article> getArticleUpdate(Integer limie);
 }

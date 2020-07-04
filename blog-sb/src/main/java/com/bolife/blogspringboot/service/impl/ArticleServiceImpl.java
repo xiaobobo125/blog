@@ -78,7 +78,7 @@ public class ArticleServiceImpl implements ArticleService {
     @Override
     public List<Article> getArticlesByCategories(List<Category> categoiesByArticleId, Integer articleNum) {
         if(categoiesByArticleId == null || categoiesByArticleId.size() == 0){
-            return null;
+            return articleMapper.findRandomArticle(articleNum);
         }
         return articleMapper.findArticleByCategories(categoiesByArticleId,articleNum);
     }
@@ -105,5 +105,10 @@ public class ArticleServiceImpl implements ArticleService {
     @Override
     public List<Article> getArticle() {
         return articleMapper.findAllArticle(null);
+    }
+
+    @Override
+    public List<Article> getArticleUpdate(Integer limie) {
+        return articleMapper.findArticleUpdate(limie);
     }
 }

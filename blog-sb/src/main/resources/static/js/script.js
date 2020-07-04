@@ -247,7 +247,7 @@ function logout() {
     $.ajax({
         async: false,
         type: "POST",
-        url: '/admin/logout',
+        url: '/logout',
         contentType: "application/x-www-form-urlencoded; charset=utf-8",
         dataType: "text",
         complete: function () {

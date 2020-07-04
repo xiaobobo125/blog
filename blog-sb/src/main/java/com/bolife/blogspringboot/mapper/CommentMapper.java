@@ -18,4 +18,6 @@ public interface CommentMapper {
     List<Comment> findNearComment(@Param("number") Integer number);
 
     List<Comment> findCommentByArticleId(@Param("aid") Integer aid);
+
+    void insertComment(@Param("comment") Comment comment);
 }

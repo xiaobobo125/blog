@@ -12,4 +12,6 @@ public interface UserService {
     User getUserByUserName(String username);
 
     void updateUser(User user);
+
+    User getUserById(Integer userId);
 }

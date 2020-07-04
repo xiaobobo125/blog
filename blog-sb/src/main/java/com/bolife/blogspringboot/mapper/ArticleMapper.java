@@ -37,4 +37,6 @@ public interface ArticleMapper {
     void updateArticle(Article article);
 
     Integer getArticleViewCount();
+
+    List<Article> findArticleUpdate(@Param("limit") Integer limit);
 }

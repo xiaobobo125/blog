@@ -72,11 +72,11 @@
     </select>
 
     <select id="findAfterArticle" resultMap="BaseResultMap">
-        SELECT * FROM article WHERE article_status = 1 AND article_id >#{aid} ORDER BY article_id limit 1
+        SELECT * FROM article WHERE article_status = 1 AND article_id &gt; #{aid} ORDER BY article_id limit 1
     </select>
 
     <select id="findBeforeArticle" resultMap="BaseResultMap">
-        SELECT * FROM article WHERE article_status = 1 AND article_id >#{aid} ORDER BY article_id limit 1
+        SELECT * FROM article WHERE article_status = 1 AND article_id &lt; #{aid} ORDER BY article_id limit 1
     </select>
 
     <select id="getArticleViewCount" resultType="Integer">
@@ -103,4 +103,8 @@
         </set>
         where article_id = #{articleId,jdbcType=INTEGER}
     </update>
+
+    <select id="findArticleUpdate" resultMap="BaseResultMap">
+        SELECT * FROM article WHERE  article_status = 1 ORDER BY article_create_time DESC limit #{limit}
+    </select>
 </mapper>

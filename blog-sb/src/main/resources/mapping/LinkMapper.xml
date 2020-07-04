@@ -20,4 +20,15 @@
     <select id="findCountLink" resultType="Integer">
       SELECT COUNT(*) FROM link
     </select>
+
+    <insert id="insert" parameterType="com.bolife.blogspringboot.entity.Link" useGeneratedKeys="true" keyProperty="linkId">
+        insert into link (link_id, link_url, link_name,
+        link_image, link_description, link_owner_nickname,
+        link_owner_contact, link_update_time, link_create_time,
+        link_order, link_status)
+        values (#{link.linkId,jdbcType=INTEGER}, #{link.linkUrl,jdbcType=VARCHAR}, #{link.linkName,jdbcType=VARCHAR},
+        #{link.linkImage,jdbcType=VARCHAR}, #{link.linkDescription,jdbcType=VARCHAR}, #{link.linkOwnerNickname,jdbcType=VARCHAR},
+        #{link.linkOwnerContact,jdbcType=VARCHAR}, #{link.linkUpdateTime,jdbcType=TIMESTAMP}, #{link.linkCreateTime,jdbcType=TIMESTAMP},
+        #{link.linkOrder,jdbcType=INTEGER}, #{link.linkStatus,jdbcType=INTEGER})
+    </insert>
 </mapper>

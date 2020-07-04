@@ -76,6 +76,7 @@ public class HomeController {
         model.addAttribute("mostCommentArticleList", mostCommentArticleList);
         return "Home/Page/siteMap";
     }
+
     @RequestMapping("/404")
     public String goError1(){
         return "Home/Error/404";

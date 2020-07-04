@@ -26,4 +26,9 @@ public class LinkServiceimpl implements LinkService {
     public Integer getCountLink() {
         return linkMapper.findCountLink();
     }
+
+    @Override
+    public void insertLink(Link link) {
+        linkMapper.insert(link);
+    }
 }

@@ -11,15 +11,53 @@
     <nav id="top-header">
         <div class="top-nav">
             <div class="user-login">
-                <c:choose>
-                    <c:when test="${sessionScope.user==null}">
-                        <a href="/login">登录</a>
-                    </c:when>
-                    <c:otherwise>
-                        <a href="/admin">进入后台</a>
-                    </c:otherwise>
-                </c:choose>
-            </div>
+            <c:choose>
+                <c:when test="${sessionScope.user == null}">
+                    <a href="/login">登录</a>
+                    <a href="/">暂不提供注册功能，后续会相应实现</a>
+                    <%--<a href="/regist">注册</a>--%>
+                </c:when>
+                <c:otherwise>
+                    <c:if test="${sessionScope.user.userStatus == 2}">
+                        <a href="/admin">进入后台  </a>
+                    </c:if>
+                    <a href="/">${sessionScope.user.userNickname}</a>
+                </c:otherwise>
+            </c:choose>
+            <script type="text/javascript">
+                today = new Date();
+            var day;
+            var date;
+            var hello;
+            hour = new Date().getHours();
+            if (hour < 6) {
+                hello = '凌晨好！';
+            } else if (hour < 9) {
+                hello = '早上好！';
+            } else if (hour < 12) {
+                hello = '上午好！';
+            } else if (hour < 14) {
+                hello = '中午好！';
+            } else if (hour < 17) {
+                hello = '下午好！';
+            } else if (hour < 19) {
+                hello = '傍晚好！';
+            } else if (hour < 22) {
+                hello = '晚上好！';
+            } else {
+                hello = '夜深了！ ';
+            }
+            document.write(' ' + hello);
+            </script>
+            <script type="text/javascript">
+                var d, s = "现在是：";
+                var x = new Array("星期日", "星期一", "星期二", "星期三", "星期四", "星期五", "星期六");
+                d = new Date();
+                s += d.getFullYear() + "年" + (d.getMonth() + 1) + "月" + d.getDate() + "日 ";
+                s += x[d.getDay()];
+                document.writeln(s);
+            </script>
+        </div>
             <div class="menu-topmenu-container">
                 <ul id="menu-topmenu" class="top-menu">
                     <c:forEach items="${menuList}" var="m">
