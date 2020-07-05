@@ -30,9 +30,11 @@
     </rapid:block>
     <link rel="stylesheet" href="/css/style.css">
     <link rel="stylesheet" href="/plugin/font-awesome/css/font-awesome.min.css">
+
     <rapid:block name="header-style">
 
     </rapid:block>
+
 </head>
 <body>
 <div id="page" class="site" style="transform: none;">

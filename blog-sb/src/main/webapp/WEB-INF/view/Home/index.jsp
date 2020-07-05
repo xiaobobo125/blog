@@ -12,7 +12,7 @@
         <div id="scrolldiv">
             <div class="scrolltext">
                 <ul style="margin-top: 0px;">
-                    <c:forEach items="${noticeList}" var="n">
+                    <c:forEach items="${notices}" var="n">
                         <li class="scrolltext-title">
                             <a href="/notice/${n.noticeId}" rel="bookmark">${n.noticeTitle}</a>
                         </li>
@@ -27,7 +27,7 @@
     <div id="primary" class="content-area">
 
         <main id="main" class="site-main" role="main">
-            <c:forEach items="${pageInfo.list}" var="a">
+            <c:forEach items="${articleInfo.list}" var="a">
 
                 <article class="post type-post">
 
@@ -126,7 +126,7 @@
 <rapid:override name="link">
     <div class="links-box">
         <div id="links">
-            <c:forEach items="${linkList}" var="l">
+            <c:forEach items="${links}" var="l">
                 <ul class="lx7">
                     <li class="link-f link-name">
                         <a href="${l.linkUrl}" target="_blank">

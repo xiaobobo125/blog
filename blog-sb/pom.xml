@@ -65,19 +65,24 @@
 		</dependency>
 		<dependency>
 			<groupId>com.github.pagehelper</groupId>
+			<artifactId>pagehelper-spring-boot-autoconfigure</artifactId>
+			<version>1.2.5</version>
+		</dependency>
+		<dependency>
+			<groupId>com.github.pagehelper</groupId>
+			<artifactId>pagehelper-spring-boot-starter</artifactId>
+			<version>1.2.5</version>
+		</dependency>
+		<dependency>
+			<groupId>com.github.pagehelper</groupId>
 			<artifactId>pagehelper</artifactId>
 			<version>5.1.2</version>
 		</dependency>
-		<dependency>
-            <groupId>com.github.pagehelper</groupId>
-            <artifactId>pagehelper-spring-boot-autoconfigure</artifactId>
-            <version>1.2.5</version>
-		</dependency>
 
 		<dependency>
-            <groupId>com.github.pagehelper</groupId>
-            <artifactId>pagehelper-spring-boot-starter</artifactId>
-            <version>1.2.5</version>
+			<groupId>com.alibaba</groupId>
+			<artifactId>fastjson</artifactId>
+			<version>1.2.47</version>
 		</dependency>
 		<!-- jackson -->
 		<dependency>
@@ -106,6 +111,12 @@
 			<artifactId>spring-boot-devtools</artifactId>
 			<optional>true</optional>
 			<scope>true</scope>
+		</dependency>
+
+		<dependency>
+			<groupId>cn.hutool</groupId>
+			<artifactId>hutool-all</artifactId>
+			<version>4.1.13</version>
 		</dependency>
 		<dependency>
 			<groupId>org.springframework.boot</groupId>

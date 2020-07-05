@@ -1,11 +1,49 @@
 <?xml version="1.0" encoding="UTF-8" ?>
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
-<mapper namespace="com.bolife.blogspringboot.mapper.ArticleCategoryRefMappler">
-    <resultMap id="BaseResultMap" type="com.bolife.blogspringboot.entity.ArticleCategoryRef">
+<mapper namespace="com.bolife.blog.mapper.ArticleCategoryRefMappler">
+    <resultMap id="BaseResultMap" type="com.bolife.blog.entity.ArticleCategoryRef">
         <result property="articleId" column="article_id" jdbcType="INTEGER"></result>
         <result property="categoryId" column="category_id" jdbcType="INTEGER"></result>
     </resultMap>
-    <select id="getArticleByCategoryId" resultMap="BaseResultMap">
-        SELECT * FROM article_category_ref WHERE category_id = #{cid}
+    <sql id="tb">article_category_ref</sql>
+    <select id="listCategoryByArticleId" parameterType="Integer"
+            resultType="com.bolife.blog.entity.Category">
+        SELECT
+        category.*
+        FROM category, article_category_ref
+        WHERE article_category_ref.article_id = #{value} AND
+        article_category_ref.category_id = category.category_id
+        ORDER BY category.category_pid asc
     </select>
+
+    <insert id="insert" parameterType="java.lang.Integer">
+        insert into
+        <include refid="tb"/>
+        (article_id, category_id)
+        values (#{articleId}, #{categoryId})
+    </insert>
+
+    <select id="listCategoryIdByArticleId" resultType="Integer">
+        SELECT category_id FROM
+        <include refid="tb"/>
+        WHERE article_id = #{value}
+    </select>
+
+    <select id="countArticleByCategoryId" parameterType="java.lang.Integer" resultType="java.lang.Integer">
+        select count(*) from
+        <include refid="tb"/>
+        where category_id = #{value}
+    </select>
+
+    <delete id="deleteByCategoryId" parameterType="java.lang.Integer">
+        delete from
+        <include refid="tb"/>
+        where category_id = #{value}
+    </delete>
+
+    <delete id="deleteByArticleId" parameterType="java.lang.Integer">
+        delete from
+        <include refid="tb"/>
+        where article_id = #{value}
+    </delete>
 </mapper>

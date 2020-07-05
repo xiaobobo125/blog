@@ -110,7 +110,7 @@
         if(typeof wpOnload=='function')wpOnload();
     </script>
 
-    <p id="backtoblog"><a href="/">&larr; 返回到${options.optionSiteTitle}主页</a></p>
+    <p id="backtoblog"><a href="/">&larr; 返回到博客</a></p>
 
 </div>
 

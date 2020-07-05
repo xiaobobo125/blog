@@ -98,7 +98,7 @@
             <i class="fa fa-bars"></i>所有标签
         </h3>
         <div class="tagcloud">
-            <c:forEach items="${allTagList}" var="tag">
+            <c:forEach items="${tags}" var="tag">
                 <a href="/tag/${tag.tagId}"
                    class="tag-link-129 tag-link-position-1"
                    style="font-size: 14px;">
@@ -117,12 +117,7 @@
             class="widget-title"><i class="fa fa-bars"></i>近期评论</h3>
         <div id="message" class="message-widget">
             <ul>
-                <c:if test="${recentCommentList == null or  fn:length(recentCommentList) ==0}">
-                    <li style="border: none;">
-                       <span>近期还没有评论，快去发表评论吧！</span>
-                    </li>
-                </c:if>
-                <c:forEach items="${recentCommentList}" var="r">
+                <c:forEach items="${comments}" var="r">
                 <li style="border: none;">
                     <a href="/article/${r.commentArticleId}/#anchor-comment-${r.commentId}"  rel="external nofollow">
                         <%--<img alt="" src="${r.commentAuthorAvatar}" class="avatar avatar-64 photo" height="64" width="64">--%>

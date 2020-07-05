@@ -328,7 +328,7 @@
                 <%--</div>--%>
             <%--</div>--%>
         <%--</div>--%>
-    </div>
+    <%--</div>--%>
 
 </rapid:override>
 <rapid:override name="footer-script">

@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8" ?>
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
-<mapper namespace="com.bolife.blogspringboot.mapper.CommentMapper">
-    <resultMap id="BaseResultMap" type="com.bolife.blogspringboot.entity.Comment">
+<mapper namespace="com.bolife.blog.mapper.CommentMapper">
+    <resultMap id="BaseResultMap" type="com.bolife.blog.entity.Comment">
         <id column="comment_id" property="commentId" jdbcType="INTEGER"/>
         <result column="comment_pid" property="commentPid" jdbcType="INTEGER"/>
         <result column="comment_user_id" property="commentUserId" jdbcType="INTEGER"/>
@@ -17,31 +17,99 @@
         <result column="comment_create_time" property="commentCreateTime" jdbcType="TIMESTAMP"/>
         <result column="comment_role" property="commentRole" jdbcType="INTEGER"/>
     </resultMap>
-    <select id="findCountComment" resultType="Integer">
-        SELECT COUNT(*) FROM comment
-    </select>
-    <select id="findNearComment" resultMap="BaseResultMap">
-        SELECT * FROM comment
-            <if test="number!=null">
-                limit #{number}
-            </if>
+    <sql id="tb">comment</sql>
+
+    <sql id="Base_Column_List">
+        comment_id, comment_user_id, comment_pid, comment_pname, comment_article_id, comment_author_name,
+        comment_author_email, comment_author_url, comment_author_avatar, comment_content, comment_agent,
+        comment_ip,comment_create_time, comment_role
+    </sql>
+    <!--获得最近评论，访客的评论-->
+    <select id="listRecentComment" parameterType="Integer" resultMap="BaseResultMap">
+        SELECT
+        <include refid="Base_Column_List"/>
+        FROM
+        <include refid="tb"/>
+        WHERE comment_role = 0
+        ORDER BY comment_id DESC
+        LIMIT #{limit}
     </select>
 
-    <select id="findCommentByArticleId" resultMap="BaseResultMap">
-        SELECT * FROM comment WHERE comment_article_id = #{aid}
+    <select id="listCommentByArticleId" parameterType="Integer" resultMap="BaseResultMap">
+        SELECT
+        <include refid="Base_Column_List"/>
+        FROM
+        <include refid="tb"/>
+        WHERE
+        comment_article_id = #{id}
+        ORDER BY comment_id ASC
     </select>
 
-    <insert id="insertComment" parameterType="com.bolife.blogspringboot.entity.Comment" useGeneratedKeys="true" keyProperty="commentId">
+    <select id="getCommentById" parameterType="Integer" resultMap="BaseResultMap">
+        SELECT
+        <include refid="Base_Column_List"/>
+        FROM
+        <include refid="tb"/>
+        WHERE
+        comment_id = #{cid}
+    </select>
+
+    <delete id="deleteComment" parameterType="java.lang.Integer">
+        delete from
+        <include refid="tb"/>
+        where comment_id = #{cid,jdbcType=INTEGER}
+    </delete>
+
+    <insert id="insert" parameterType="com.bolife.blog.entity.Comment" useGeneratedKeys="true" keyProperty="commentId">
         insert into
-        comment
+        <include refid="tb"/>
         (comment_pid,comment_user_id, comment_pname, comment_article_id,
         comment_author_name, comment_author_email,
         comment_author_url, comment_author_avatar, comment_content, comment_agent,
         comment_ip, comment_create_time, comment_role)
-        values (#{comment.commentPid,jdbcType=INTEGER},#{comment.commentUserId,jdbcType=INTEGER}, #{comment.commentPname,jdbcType=VARCHAR}, #{comment.commentArticleId,jdbcType=INTEGER},
-        #{comment.commentAuthorName,jdbcType=VARCHAR}, #{comment.commentAuthorEmail,jdbcType=VARCHAR},
-        #{comment.commentAuthorUrl,jdbcType=VARCHAR},#{comment.commentAuthorAvatar}, #{comment.commentContent,jdbcType=VARCHAR},
-        #{comment.commentAgent,jdbcType=VARCHAR},
-        #{comment.commentIp,jdbcType=VARCHAR}, #{comment.commentCreateTime,jdbcType=TIMESTAMP}, #{comment.commentRole,jdbcType=INTEGER})
+        values (#{commentPid,jdbcType=INTEGER},#{commentUserId,jdbcType=INTEGER}, #{commentPname,jdbcType=VARCHAR}, #{commentArticleId,jdbcType=INTEGER},
+        #{commentAuthorName,jdbcType=VARCHAR}, #{commentAuthorEmail,jdbcType=VARCHAR},
+        #{commentAuthorUrl,jdbcType=VARCHAR},#{commentAuthorAvatar}, #{commentContent,jdbcType=VARCHAR},
+        #{commentAgent,jdbcType=VARCHAR},
+        #{commentIp,jdbcType=VARCHAR}, #{commentCreateTime,jdbcType=TIMESTAMP}, #{commentRole,jdbcType=INTEGER})
     </insert>
+
+    <select id="listChildComment" resultMap="BaseResultMap">
+        SELECT
+        <include refid="Base_Column_List"/>
+        FROM
+        <include refid="tb"/>
+        WHERE
+        comment_pid=#{cid}
+    </select>
+
+    <!--获取评论列表-->
+    <select id="listComment" resultMap="BaseResultMap">
+        SELECT
+        <include refid="Base_Column_List"/>
+        FROM
+        <include refid="tb"/>
+        ORDER BY comment_id DESC
+    </select>
+
+    <update id="update" parameterType="com.bolife.blog.entity.Comment">
+        update
+        <include refid="tb"/>
+        <set>
+            <if test="commentPid != null">comment_pid = #{commentPid,jdbcType=INTEGER},</if>
+            <if test="commentUserId != null">comment_user_id = #{commentUserId,jdbcType=INTEGER},</if>
+            <if test="commentPname != null">comment_pname = #{commentPname,jdbcType=VARCHAR},</if>
+            <if test="commentArticleId != null">comment_article_id = #{commentArticleId,jdbcType=INTEGER},</if>
+            <if test="commentAuthorName != null">comment_author_name = #{commentAuthorName,jdbcType=VARCHAR},</if>
+            <if test="commentAuthorEmail != null">comment_author_email = #{commentAuthorEmail,jdbcType=VARCHAR},</if>
+            <if test="commentAuthorUrl != null">comment_author_url = #{commentAuthorUrl,jdbcType=VARCHAR},</if>
+            <if test="commentContent != null">comment_content = #{commentContent,jdbcType=VARCHAR},</if>
+            <if test="commentAgent != null">comment_agent = #{commentAgent,jdbcType=VARCHAR},</if>
+            <if test="commentIp != null">comment_ip = #{commentIp,jdbcType=VARCHAR},</if>
+            <if test="commentCreateTime != null">comment_create_time = #{commentCreateTime,jdbcType=TIMESTAMP},</if>
+            <if test="commentAuthorAvatar != null">comment_author_avatar = #{commentAuthorAvatar},</if>
+            <if test="commentRole != null">comment_role = #{commentRole,jdbcType=INTEGER},</if>
+        </set>
+        where comment_id = #{commentId,jdbcType=INTEGER}
+    </update>
 </mapper>

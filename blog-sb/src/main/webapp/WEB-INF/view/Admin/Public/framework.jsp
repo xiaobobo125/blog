@@ -35,7 +35,7 @@
                 <dl class="layui-nav-child">
                     <dd><a href="/admin/article/insert">文章</a></dd>
                     <dd><a href="/admin/page/insert">页面</a></dd>
-                    <dd><a href="/admin/category/insert">分类</a></dd>
+                    <dd><a href="/admin/category">分类</a></dd>
                     <dd><a href="/admin/notice/insert">公告</a></dd>
                     <dd><a href="/admin/link/insert">链接</a></dd>
                 </dl>
@@ -52,7 +52,7 @@
                 </dl>
             </li>
             <li class="layui-nav-item">
-                <a href="/logout">退出</a>
+                <a href="/admin/logout">退出</a>
             </li>
         </ul>
     </div>
@@ -61,7 +61,7 @@
         <div class="layui-side-scroll">
             <!-- 左侧导航区域（可配合layui已有的垂直导航） -->
             <ul class="layui-nav layui-nav-tree"  lay-filter="test">
-                <li class="layui-nav-item layui-nav-itemed">
+                <li class="layui-nav-item <c:if test='${listStatus == 1}'>layui-nav-itemed</c:if> ">
                     <a class="" href="javascript:;">文章</a>
                     <dl class="layui-nav-child">
                         <dd><a href="/admin/article">全部文章</a></dd>
@@ -70,14 +70,14 @@
                         <dd><a href="/admin/tag">全部标签</a></dd>
                     </dl>
                 </li>
-                <li class="layui-nav-item">
+                <li class="layui-nav-item <c:if test='${listStatus == 2}'>layui-nav-itemed</c:if>">
                     <a href="javascript:;">页面</a>
                     <dl class="layui-nav-child">
                         <dd><a href="/admin/page">全部页面</a></dd>
                         <dd><a href="/admin/page/insert">添加页面</a></dd>
                     </dl>
                 </li>
-                <li class="layui-nav-item">
+                <li class="layui-nav-item <c:if test='${listStatus == 3}'>layui-nav-itemed</c:if>">
                     <a class="" href="javascript:;">
                         链接
                     </a>
@@ -86,7 +86,7 @@
                         <dd><a href="/admin/link/insert">添加链接</a></dd>
                     </dl>
                 </li>
-                <li class="layui-nav-item">
+                <li class="layui-nav-item <c:if test='${listStatus == 4}'>layui-nav-itemed</c:if>">
                     <a href="javascript:;">公告</a>
                     <dl class="layui-nav-child">
                         <dd><a href="/admin/notice">全部公告</a></dd>
@@ -98,7 +98,7 @@
                         评论
                     </a>
                 </li>
-                <li class="layui-nav-item">
+                <li class="layui-nav-item <c:if test='${listStatus == 5}'>layui-nav-itemed</c:if>">
                     <a class="" href="javascript:;">
                         用户
                     </a>
@@ -107,7 +107,7 @@
                         <dd><a href="/admin/user/insert">添加用户</a></dd>
                     </dl>
                 </li>
-                <li class="layui-nav-item">
+                <li class="layui-nav-item <c:if test='${listStatus == 6}'>layui-nav-itemed</c:if>">
                     <a href="javascript:;">设置</a>
                     <dl class="layui-nav-child">
                         <dd><a href="/admin/menu">菜单</a></dd>
@@ -129,7 +129,7 @@
 
     <div class="layui-footer">
         <!-- 底部固定区域 -->
-        © <a href="http://www.xinglili.top">MrBoBo博客</a>
+        © <a href="#">博客</a>
     </div>
 </div>
 

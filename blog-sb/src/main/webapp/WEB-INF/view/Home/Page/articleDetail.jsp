@@ -120,12 +120,12 @@
 
                     <footer class="single-footer">
                         <ul class="single-meta">
-                            <c:if test="${sessionScope.user!=null}">
-                                <li class="edit-link">
-                                    <a target="_blank" class="post-edit-link"
-                                       href="/admin/article/edit/${article.articleId}">编辑</a>
-                                </li>
-                            </c:if>
+                            <%--<c:if test="${sessionScope.user!=null}">--%>
+                                <%--<li class="edit-link">--%>
+                                    <%--<a target="_blank" class="post-edit-link"--%>
+                                       <%--href="/admin/article/edit/${article.articleId}">编辑</a>--%>
+                                <%--</li>--%>
+                            <%--</c:if>--%>
                             <li class="comment">
                                 <a href="/article/${article.articleId}#comments"
                                    rel="external nofollow">
@@ -262,7 +262,7 @@
                               <span class="meta-nav">
                                     <span class="post-nav">
                                         没有了<br>
-                                    </span>已是该分类的第一篇文章
+                                    </span>已是第一篇文章
                                 </span>
                     </c:otherwise>
                 </c:choose>
@@ -281,7 +281,7 @@
                             <span class="meta-nav">
                                 <span class="post-nav">
                                     没有了<br>
-                                </span>已是该分类的最后文章
+                                </span>已是最后文章
                              </span>
                     </c:otherwise>
                 </c:choose>
@@ -302,16 +302,18 @@
                     <form id="comment_form" method="post">
                         <c:if test="${sessionScope.user!=null}">
                             <div class="user_avatar">
-                                <img alt="MrBoBo"
+                                <img alt="头像"
                                      src="${sessionScope.user.userAvatar}"
                                      class="avatar avatar-64 photo" height="64" width="64">
                                 登录者：${sessionScope.user.userNickname}
-                                <br> <a href="javascript:void(0)" onclick="logout()">登出</a>
+                                <br> <a href="" onclick="logout()">登出</a>
                                 <input type="hidden" name="commentRole" value="1">
                                 <input type="hidden" name="commentAuthorName"
                                        value="${sessionScope.user.getUserNickname()}">
                                 <input type="hidden" name="commentAuthorEmail"
                                        value="${sessionScope.user.getUserEmail()}">
+                                <input type="hidden" name="commentUserId"
+                                       value="${sessionScope.user.getUserId()}">
                                 <input type="hidden" name="commentAuthorUrl" value="${sessionScope.user.getUserUrl()}">
                             </div>
                         </c:if>
@@ -356,7 +358,7 @@
 
                 <ol class="comment-list">
                     <c:set var="floor" value="0"/>
-                    <c:forEach items="${commentList}" var="c">
+                    <c:forEach items="${comments}" var="c">
                         <c:if test="${c.commentPid == 0}">
                             <c:set var="floor" value="${floor + 1}"/>
                             <li class="comments-anchor">
@@ -384,10 +386,13 @@
                                                     </span>
                                                     <fmt:formatDate value="${c.commentCreateTime}"
                                                                     pattern="yyyy年MM月dd日 HH:mm:ss"/>&nbsp;
-                                                     <c:if test="${(sessionScope.user != null && c.commentUserId eq sessionScope.user.userId)
+                                                    <c:if test="${(sessionScope.user != null && c.commentUserId eq sessionScope.user.userId)
                                                                 || article.articleUserId eq sessionScope.user.userId}">
-                                                        <a href="javascript:void(0)"
+                                                        <a href="javascript:;"
                                                            onclick="deleteComment(${c.commentId})">删除</a>
+                                                        <%--<a class="comment-edit-link"--%>
+                                                           <%--href="/admin/comment/edit/${c.commentId}"--%>
+                                                           <%--target="_blank">编辑</a>--%>
                                                     </c:if>
                                                     <span class="floor"> &nbsp;${floor}楼 </span>
                                                 </span>
@@ -403,7 +408,7 @@
                                 </div>
                                 <ul class="children">
                                     <c:set var="floor2" value="0"/>
-                                    <c:forEach items="${commentList}" var="c2">
+                                    <c:forEach items="${comments}" var="c2">
                                         <c:if test="${c.commentId == c2.commentPid}">
                                             <c:set var="floor2" value="${floor2+1}"/>
                                             <li class="comments-anchor">
@@ -431,10 +436,13 @@
                                                         </span>
                                                         <fmt:formatDate value="${c2.commentCreateTime}"
                                                                         pattern="yyyy年MM月dd日 HH:mm:ss"/>&nbsp;
-                                                         <c:if test="${(sessionScope.user != null && c.commentUserId eq sessionScope.user.userId)
+                                                        <c:if test="${(sessionScope.user != null && c.commentUserId eq sessionScope.user.userId)
                                                                 || article.articleUserId eq sessionScope.user.userId}">
                                                             <a href="javascript:void(0)"
                                                                onclick="deleteComment(${c2.commentId})">删除</a>
+                                                            <%--<a class="comment-edit-link"--%>
+                                                               <%--href="/admin/comment/edit/${c2.commentId}"--%>
+                                                               <%--target="_blank">编辑</a>--%>
                                                         </c:if>
                                                         <span class="floor"> &nbsp;${floor2}层 </span>
                                                     </span>

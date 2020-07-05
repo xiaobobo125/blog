@@ -1,27 +1,62 @@
 <?xml version="1.0" encoding="UTF-8" ?>
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
-<mapper namespace="com.bolife.blogspringboot.mapper.TagMapper">
-    <resultMap id="BaseResultMap" type="com.bolife.blogspringboot.entity.Tag">
+<mapper namespace="com.bolife.blog.mapper.TagMapper">
+    <resultMap id="BaseResultMap" type="com.bolife.blog.entity.Tag">
         <id column="tag_id" property="tagId" jdbcType="INTEGER" />
         <result column="tag_name" property="tagName" jdbcType="VARCHAR" />
         <result column="tag_description" property="tagDescription" jdbcType="VARCHAR" />
     </resultMap>
-    <select id="findCountTag" resultType="Integer">
-        SELECT COUNT(*) FROM tag
-    </select>
-    <select id="findAllTag" resultMap="BaseResultMap">
-        SELECT * FROM tag
+    <sql id="Base_Column_List" >
+        tag_id, tag_name, tag_description
+    </sql>
+    <sql id="tb">tag</sql>
+
+    <insert id="insert" parameterType="com.bolife.blog.entity.Tag">
+        insert into
+        <include refid="tb"/>
+        (tag_name, tag_description)
+        values (#{tagName,jdbcType=VARCHAR},
+        #{tagDescription,jdbcType=VARCHAR})
+    </insert>
+
+
+    <!--获得标签总数-->
+    <select id="countTag" resultType="Integer">
+        SELECT COUNT(*) FROM <include refid="tb"/>
     </select>
 
-    <select id="getTagsByArticleId" resultMap="BaseResultMap" parameterType="Integer">
+    <select id="listTag" resultMap="BaseResultMap">
         SELECT
-        tag.*
-        FROM tag, article_tag_ref
-        WHERE article_tag_ref.article_id = #{aid} AND
-        article_tag_ref.tag_id = tag.tag_id
+        <include refid="Base_Column_List"/>
+        FROM <include refid="tb"/>
     </select>
 
-    <select id="findTagById" resultMap="BaseResultMap">
-        SELECT * FROM tag WHERE tag_id=#{tid}
+    <select id="getTagById" resultMap="BaseResultMap">
+        SELECT
+        <include refid="Base_Column_List"/>
+        FROM <include refid="tb"/>
+        <where>
+            <if test="tagId != null">
+                tag_id=#{tagId}
+            </if>
+        </where>
     </select>
+
+    <update id="update" parameterType="com.bolife.blog.entity.Tag" >
+        update <include refid="tb"/>
+        <set >
+            <if test="tagName != null" >
+                tag_name = #{tagName,jdbcType=VARCHAR},
+            </if>
+            <if test="tagDescription != null" >
+                tag_description = #{tagDescription,jdbcType=VARCHAR}
+            </if>
+        </set>
+        where tag_id = #{tagId,jdbcType=INTEGER}
+    </update>
+
+    <delete id="deleteById" parameterType="java.lang.Integer" >
+        delete from <include refid="tb"/>
+        where tag_id = #{tagId,jdbcType=INTEGER}
+    </delete>
 </mapper>
